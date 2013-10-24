@@ -1,4 +1,4 @@
-public class ball
+public class Ball
 {
   private float x; // The x location of the projectile
   private float y; // The y location of the projectile.
@@ -7,7 +7,7 @@ public class ball
   private float grav; // Gravity
   private int r; // Radius 
   
-  ball()
+  Ball()
   {
     x = 10;
     y = 10;
@@ -17,14 +17,14 @@ public class ball
     grav = 9.8;
   }
   
-  ball(float myX, float myY)
+  Ball(float myX, float myY)
   {
     x = myX;
     y = myY;
     grav = 9.8;
   }
   
- ball(float myX, float myY, float gravity)
+ Ball(float myX, float myY, float gravity)
   {
      x = myX;
      y = myY;
