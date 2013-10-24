@@ -5,10 +5,14 @@ Firing a cannonball from a cannon, made fun!
 
 Team 2, Section 007
 -------------------
-Eric Dilmore <erd130030>
+Eric Dilmore \<erd130030\>
+
 Matthew Cunningham
+
 Kevin Hwang
+
 Jack Murray
+
 David Smith
 
 For More Information
