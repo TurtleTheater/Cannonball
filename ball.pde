@@ -11,7 +11,7 @@ public class Ball
   {
     x = 10;
     y = 10;
-    r = 10;
+    r = 20;
     velX = 0;
     velY = 0;
     grav = 9.8;
@@ -21,6 +21,7 @@ public class Ball
   {
     x = myX;
     y = myY;
+    r = 20;
     grav = 9.8;
   }
   
@@ -28,6 +29,7 @@ public class Ball
   {
      x = myX;
      y = myY;
+     r = 20;
      grav = gravity;
   }
   
