@@ -33,18 +33,18 @@ public class Ball
      grav = gravity;
   }
   
-  void draw()
+  private void draw()
   {
     ellipse(x,y,r,r);
   }
   
   
-  void physX()
+  private void physX()
   {
     // Do nothing
   }
   
-  void physY()
+  private void physY()
   {
     // Do nothing
   }
