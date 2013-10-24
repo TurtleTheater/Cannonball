@@ -4,13 +4,13 @@ void setup()
 {
   size ( 500, 300 );
   frameRate ( 60 );
-  b = new Ball ();
+  b = new Ball();
   noLoop();
 }
 
 void draw()
 {
-  b.draw();
+  b.update();
 }
 
 
