@@ -5,7 +5,8 @@ public class Ball
   private float velX; // The x velocity of the projectile.
   private float velY;  // The y velocity of the projectile.
   private float grav; // Gravity
-  private int r; // Radius 
+  private int r; // Radius
+  PImage img = loadImage("NicholasCage.png");
   
   Ball()
   {
@@ -36,6 +37,7 @@ public class Ball
   private void draw()
   {
     ellipse(x,y,r,r);
+    image(img, 0, 0, r, r);
   }
   
   
