@@ -1,38 +1,34 @@
-
-  
-
-
 public class ball
 {
   private float x; // The x location of the projectile
-  private float y;// the y location of the projectile.
-  private float velX;
-  private float velY; 
-  private float grav; //Gravity
-  private int r; //radius 
+  private float y; // The y location of the projectile.
+  private float velX; // The x velocity of the projectile.
+  private float velY;  // The y velocity of the projectile.
+  private float grav; // Gravity
+  private int r; // Radius 
   
   ball()
   {
-    x=10;
-    y=10;
-    r=10;
-    velX=0;
-    velY=0;
-    grav=9.8;
+    x = 10;
+    y = 10;
+    r = 10;
+    velX = 0;
+    velY = 0;
+    grav = 9.8;
   }
   
   ball(float myX, float myY)
   {
-    x=myX;
-    y= myY;
-    grav= 9.8;
+    x = myX;
+    y = myY;
+    grav = 9.8;
   }
   
  ball(float myX, float myY, float gravity)
   {
-     x=myX;
-     y= myY;
-     grav= gravity;
+     x = myX;
+     y = myY;
+     grav = gravity;
   }
   
   void bDraw()
@@ -53,15 +49,15 @@ public class ball
   
   
   protected void setX(float myX)
-  {x=myX;}
+  {x = myX;}
   protected void setY(float myY)
-  {y=myY;}
+  {y = myY;}
   protected void setVelX(float vX)
-  {velX=vX;}
+  {velX = vX;}
   protected void setVelY(float vY)
-  {velY=vY;}
+  {velY = vY;}
   protected void setGravity(float g)
-  {grav=g;}
+  {grav = g;}
   public float getX()
   {return x;}
   public float getY()
@@ -72,7 +68,4 @@ public class ball
   {return velX;}
   public float getVelY()
   {return velY;}    
-  
-  
 }
-
