@@ -48,6 +48,13 @@ public class Ball
   {
     // Do nothing
   }
+
+  void update()
+  {
+    physX();
+    physY();
+    draw();
+  }
   
   
   protected void setX(float myX)
