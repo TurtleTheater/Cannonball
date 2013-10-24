@@ -31,7 +31,7 @@ public class Ball
      grav = gravity;
   }
   
-  void bDraw()
+  void draw()
   {
     ellipse(x,y,r,r);
   }
