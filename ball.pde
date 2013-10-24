@@ -39,14 +39,14 @@ public class Ball
   }
   
   
-  float physX()
+  void physX()
   {
-    return -1;
+    // Do nothing
   }
   
-  float physY()
+  void physY()
   {
-    return -1;
+    // Do nothing
   }
   
   
