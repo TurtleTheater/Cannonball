@@ -43,12 +43,13 @@ public class Ball
   
   private void physX()
   {
-    // Do nothing
+    x+=velX;
   }
   
   private void physY()
   {
-    // Do nothing
+    y+=velY;
+    velY+=grav;
   }
 
   void update()
