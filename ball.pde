@@ -2,8 +2,8 @@ public class Ball
 {
   private float x; // The x location of the projectile
   private float y; // The y location of the projectile.
-  private float velX; // The x velocity of the projectile.
-  private float velY;  // The y velocity of the projectile.
+  private float velX = 0; // The x velocity of the projectile.
+  private float velY = 0;  // The y velocity of the projectile.
   private float grav = 0.1; // Gravity
   private int r = 40; // Radius
   PImage img = loadImage("NicholasCage.png");
@@ -12,24 +12,18 @@ public class Ball
   {
     x = r / 2;
     y = r / 2;
-    velX = 0;
-    velY = 0;
   }
 
   Ball(float myX, float myY)
   {
     x = myX;
     y = myY;
-    velX = 0;
-    velY = 0;
   }
 
   Ball(float myX, float myY, float gravity)
   {
     x = myX;
     y = myY;
-    velX = 0;
-    velY = 0;
     grav = gravity;
   }
 
@@ -39,7 +33,7 @@ public class Ball
     y = myY;
     
     velX = v * cos ( radians ( angle ) );
-    velY = v * sin ( radians ( angle ) );
+    velY = -1 * v * sin ( radians ( angle ) );
   }
 
   private void draw()
