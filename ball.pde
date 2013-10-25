@@ -7,7 +7,7 @@ public class Ball
   private float grav; // Gravity
   private int r; // Radius
   PImage img = loadImage("NicholasCage.png");
-  
+
   Ball()
   {
     x = 10;
@@ -17,35 +17,39 @@ public class Ball
     velY = 0;
     grav = 9.8;
   }
-  
+
   Ball(float myX, float myY)
   {
     x = myX;
     y = myY;
     r = 20;
+    velX = 0;
+    velY = 0;
     grav = 9.8;
   }
-  
- Ball(float myX, float myY, float gravity)
+
+  Ball(float myX, float myY, float gravity)
   {
-     x = myX;
-     y = myY;
-     r = 20;
-     grav = gravity;
+    x = myX;
+    y = myY;
+    r = 20;
+    velX = 0;
+    velY = 0;
+    grav = gravity;
   }
-  
+
   private void draw()
   {
     ellipse(x,y,r,r);
     image(img, 0, 0, r, r);
   }
-  
-  
+
+
   private void physX()
   {
     x+=velX;
   }
-  
+
   private void physY()
   {
     y+=velY;
@@ -58,8 +62,8 @@ public class Ball
     physY();
     draw();
   }
-  
-  
+
+
   protected void setX(float myX)
   {x = myX;}
   protected void setY(float myY)
