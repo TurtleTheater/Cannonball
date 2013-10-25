@@ -38,6 +38,17 @@ public class Ball
     grav = gravity;
   }
 
+  Ball(float myX, float myY, float angle, float v)
+  {
+    x = myX;
+    y = myY;
+    r = 20;
+    grav = 9.8;
+    
+    velX = v * cos ( radians ( angle ) );
+    velY = v * sin ( radians ( angle ) );
+  }
+
   private void draw()
   {
     ellipse(x,y,r,r);
