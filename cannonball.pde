@@ -2,9 +2,9 @@ Ball b;
 
 void setup()
 {
-  size ( 800, 400 );
+  size ( 1000, 600 );
   frameRate ( 100 );
-  b = new Ball();
+  b = new Ball( 0, height, 45, 10 );
 }
 
 void draw()
