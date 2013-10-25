@@ -52,7 +52,7 @@ public class Ball
   private void draw()
   {
     ellipse(x,y,r,r);
-    image(img, 0, 0, r, r);
+    image(img, x, y, r, r);
   }
 
 
