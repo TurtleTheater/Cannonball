@@ -51,6 +51,7 @@ public class Ball
 
   private void draw()
   {
+    imageMode(CENTER);
     ellipse(x,y,r,r);
     image(img, x, y, r, r);
   }
