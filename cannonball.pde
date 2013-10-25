@@ -3,7 +3,7 @@ Ball b;
 void setup()
 {
   size ( 800, 400 );
-  frameRate ( 5 );
+  frameRate ( 100 );
   b = new Ball();
 }
 
