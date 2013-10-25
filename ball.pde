@@ -72,6 +72,13 @@ public class Ball
     draw();
   }
 
+  void printInfo(int t_x, int t_y )
+  {
+    textSize ( 12 );
+    fill ( 0 );
+    text ( "" + b.x + ", " + b.y, t_x, t_y );
+  }
+
 
   protected void setX(float myX)
   {x = myX;}

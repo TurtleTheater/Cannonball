@@ -11,7 +11,6 @@ void draw()
 {
   background ( 255 );
   b.update();
-  text ( b.y, 100, 100 );
+  fill ( 0 );
+  b.printInfo ( 100, 100 );
 }
-
-
