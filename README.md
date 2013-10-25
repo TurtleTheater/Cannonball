@@ -9,11 +9,11 @@ Eric Dilmore \<erd130030\>
 
 Matthew Cunningham \<mac130130\>
 
-Kevin Hwang
+Kevin Hwang \<exh131330\>
 
 Jack Murray
 
-David Smith
+David Smith \<dhs130030\>
 
 For More Information
 --------------------
