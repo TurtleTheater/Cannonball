@@ -11,7 +11,7 @@ Matthew Cunningham \<mac130130\>
 
 Kevin Hwang \<exh131330\>
 
-Jack Murray
+Jack Murray \<jam130530\>
 
 David Smith \<dhs130030\>
 
