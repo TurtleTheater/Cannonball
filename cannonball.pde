@@ -4,7 +4,7 @@ void setup()
 {
   size ( 1000, 600 );
   frameRate ( 100 );
-  b = new Ball( 0, height, 45, 10 );
+  b = new Ball( 0, height - 1, 45, 10 );
 }
 
 void draw()

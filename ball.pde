@@ -57,8 +57,11 @@ public class Ball
 
   void update()
   {
-    physX();
-    physY();
+    if ( y < height )
+    {
+      physX();
+      physY();
+    }
     draw();
   }
 
