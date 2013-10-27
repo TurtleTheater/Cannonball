@@ -5,15 +5,15 @@ Firing a cannonball from a cannon, made fun!
 
 Team 2, Section 007
 -------------------
-Eric Dilmore \<erd130030\>
+Eric Dilmore \<erd130030\> (@geppettodivacin)
 
-Matthew Cunningham \<mac130130\>
+Matthew Cunningham \<mac130130\> (@matthewcunningham)
 
-Kevin Hwang \<exh131330\>
+Kevin Hwang \<exh131330\> (@1turtles)
 
-Jack Murray \<jam130530\>
+Jack Murray \<jam130530\> (@halfoff)
 
-David Smith \<dhs130030\>
+David Smith \<dhs130030\> (@CallMePickle)
 
 For More Information
 --------------------
