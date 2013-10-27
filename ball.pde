@@ -93,4 +93,6 @@ public class Ball
   {return velX;}
   public float getVelY()
   {return velY;}    
+  public float getR()
+  {return r;}
 }
