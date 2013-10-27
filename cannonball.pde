@@ -18,6 +18,11 @@ void draw()
   b.printInfo ( 100, 100 );
 
   printTime ( 100, 80 );
+
+  if ( b.getY() >= height )
+  {
+    noLoop();
+  }
 }
 
 void printTime( int x, int y )
