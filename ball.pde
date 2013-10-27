@@ -73,7 +73,7 @@ public class Ball
   {
     textSize ( 12 );
     fill ( 0 );
-    text ( "" + b.x + ", " + b.y, t_x, t_y );
+    text ( "(" + nf ( b.x, 3, 4 ) + ", " + nf ( b.y, 3, 4 ) + ")", t_x, t_y );
   }
 
 
