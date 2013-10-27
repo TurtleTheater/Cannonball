@@ -1,4 +1,5 @@
 Ball b;
+float t = 0.0;
 
 void setup()
 {
@@ -10,6 +11,16 @@ void setup()
 void draw()
 {
   background ( 255 );
+
+  t += 1.0 / frameRate;
+
   b.update();
   b.printInfo ( 100, 100 );
+
+  printTime ( 100, 80 );
+}
+
+void printTime( int x, int y )
+{
+  text ( "" + nf ( t, 0, 4 ) + " sec", x, y );
 }
