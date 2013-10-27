@@ -4,7 +4,7 @@ public class Ball
   private float y; // The y location of the projectile.
   private float velX = 0; // The x velocity of the projectile.
   private float velY = 0;  // The y velocity of the projectile.
-  private float grav = 0.1; // Gravity
+  private float grav = 0.01; // Gravity
   private int r = 40; // Radius
   PImage img = loadImage("NicholasCage.png");
 
