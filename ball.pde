@@ -62,6 +62,9 @@ public class Ball
     {
       physX();
       physY();
+    } else
+    {
+      y = height;
     }
     draw();
   }
