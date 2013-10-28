@@ -17,9 +17,9 @@ void draw()
   t += 1.0 / frameRate;
 
   b.update();
-  b.printInfo ( 100, 100 );
+  b.printInfo ( 170, 35 );
 
-  printTime ( 100, 80 );
+  printTime ( 170, 20 );
 
   if ( b.getY() >= height )
   {
@@ -29,5 +29,6 @@ void draw()
 
 void printTime( int x, int y )
 {
+  fill ( 0 );
   text ( "" + nf ( t, 0, 4 ) + " sec", x, y );
 }
