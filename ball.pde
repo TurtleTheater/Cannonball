@@ -38,10 +38,13 @@ public class Ball
 
   private void draw()
   {
+    pushMatrix();
+    translate(x, y);
     imageMode(CENTER);
     fill(0);
     ellipse(x,y,r,r);
-    image(img, x, y, r, r);
+    image(img, 0, 0, r, r);
+    popMatrix();
   }
 
 
