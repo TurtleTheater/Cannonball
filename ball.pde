@@ -45,7 +45,7 @@ public class Ball
     rotate(radians(rotation));
     imageMode(CENTER);
     fill(0);
-    ellipse(x,y,r,r);
+    ellipse(0,0,r,r);
     image(img, 0, 0, r, r);
     popMatrix();
   }
