@@ -2,8 +2,10 @@ public class Ball
 {
   private float x; // The x location of the projectile
   private float y; // The y location of the projectile.
+  private float rotation = 0; // The rotation in degrees of the projectile.
   private float velX = 0; // The x velocity of the projectile.
   private float velY = 0;  // The y velocity of the projectile.
+  private float velR = 1; // The speed that the projectile will spin.
   private float grav = 0.01; // Gravity
   private int r = 40; // Radius
   PImage img = loadImage("kirby ball.png");
@@ -38,10 +40,14 @@ public class Ball
 
   private void draw()
   {
+    pushMatrix();
+    translate(x, y);
+    rotate(radians(rotation));
     imageMode(CENTER);
     fill(0);
     ellipse(x,y,r,r);
-    image(img, x, y, r, r);
+    image(img, 0, 0, r, r);
+    popMatrix();
   }
 
 
@@ -55,6 +61,11 @@ public class Ball
     y+=velY;
     velY+=grav;
   }
+  
+  private void turn()
+  {
+    rotation += velR;
+  }
 
   void update()
   {
@@ -62,6 +73,7 @@ public class Ball
     {
       physX();
       physY();
+      turn();
     } else
     {
       y = height;
