@@ -6,7 +6,7 @@ public class Ball
   private float velY = 0;  // The y velocity of the projectile.
   private float grav = 0.01; // Gravity
   private int r = 40; // Radius
-  PImage img = loadImage("NicholasCage.png");
+  PImage img = loadImage("kirby ball.png");
 
   Ball()
   {
