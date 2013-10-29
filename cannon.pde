@@ -36,6 +36,11 @@ public class Cannon
     // Draw the cannon.
   }
 
+  public void rotate(float myAngle)
+  {
+    angle += myAngle;
+  }
+
   public float getX()
   {return x;}
   public float getY()
