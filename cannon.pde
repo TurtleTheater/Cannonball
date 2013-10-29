@@ -36,10 +36,10 @@ public class Cannon
     // Draw the cannon.
   }
 
-  public void getX()
+  public float getX()
   {return x;}
-  public void getY()
+  public float getY()
   {return y;}
-  public void getAngle()
+  public float getAngle()
   {return angle;}
 }
