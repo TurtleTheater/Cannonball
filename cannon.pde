@@ -27,6 +27,8 @@ public class Cannon
     // Make a ball object with the right angle and velocity.
     // Return the ball object.
     // We may want to store an array of ball objects in the class, too.
+    Ball b = new Ball();
+    return b;
   }
 
   public void draw()
