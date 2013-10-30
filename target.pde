@@ -19,6 +19,11 @@ public class Target
     r = myR;
   }
 
+  public draw()
+  {
+    // Do nothing.
+  }
+
   public float getPos()
   {return pos;}
   public float getR()
