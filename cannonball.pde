@@ -1,4 +1,5 @@
 Ball b;
+Cannon c;
 float t = 0.0;
 PImage bg;
 
@@ -8,6 +9,7 @@ void setup()
   bg = loadImage("Kirby background.png");
   frameRate ( 100 );
   b = new Ball( 0, height - 1, 45, 3 );
+  c = new Cannon();
 }
 
 void draw()
