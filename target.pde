@@ -19,7 +19,7 @@ public class Target
     r = myR;
   }
 
-  public draw()
+  public void draw()
   {
     // Do nothing.
   }
