@@ -29,6 +29,16 @@ void draw()
   }
 }
 
+void keyPressed
+{
+  if (key == 'w')
+  c.rotate (.1);
+  if (key == 's')
+  c.rotate (-.1);
+  if (key == ' ')
+  c.fire ();
+}
+
 void printTime( int x, int y )
 {
   fill ( 0 );
