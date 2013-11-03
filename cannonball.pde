@@ -1,6 +1,7 @@
 Ball b;
 float t = 0.0;
 PImage bg;
+Cannon c;
 
 void setup()
 {
@@ -8,6 +9,7 @@ void setup()
   bg = loadImage("Kirby background.png");
   frameRate ( 100 );
   b = new Ball( 0, height - 1, 45, 3 );
+  c= new Cannon(500,300);
 }
 
 void draw()
@@ -18,6 +20,7 @@ void draw()
 
   b.update();
   b.printInfo ( 170, 35 );
+  c.draw();
 
   printTime ( 170, 20 );
 

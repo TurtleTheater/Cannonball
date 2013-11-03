@@ -13,6 +13,7 @@ public class Cannon
   {
     x = myX;
     y = myY;
+    angle=45;
   }
 
   public Cannon(float myX, float myY, float myAngle)
@@ -34,9 +35,15 @@ public class Cannon
   public void draw()
   {
     // Draw the cannon.
+    pushMatrix();
+    //fill(0);
+    rotate(radians(getAngle()));
+    rect(getX(),getY(),100,50);
+    popMatrix();
   }
 
-  public void rotate(float myAngle)
+  //Rotate is a reserved method used to get shapes to turn. Changed to turn to aim to avoid conflict.
+  public void aim(float myAngle)
   {
     angle += myAngle;
   }
