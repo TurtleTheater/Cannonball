@@ -15,7 +15,7 @@ public class Player
   }
   public Player(String myName)
   {
-  name = myName;
+    name = myName;
   }
   
   
