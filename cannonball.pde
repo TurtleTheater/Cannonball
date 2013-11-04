@@ -18,7 +18,8 @@ void draw()
 {
   background ( bg );
 
-  t += 1.0 / frameRate;
+  if ( b.getY() < height )
+    t += 1.0 / frameRate;
 
   b.update();
   b.printInfo ( 170, 35 );
