@@ -3,6 +3,7 @@ public class Cannon
   private float x;
   private float y;
   private float angle;
+  private float v;
 
   public Cannon()
   {
@@ -14,6 +15,7 @@ public class Cannon
     x = myX;
     y = myY;
     angle=45;
+    v=3;
   }
 
   public Cannon(float myX, float myY, float myAngle)
@@ -28,17 +30,19 @@ public class Cannon
     // Make a ball object with the right angle and velocity.
     // Return the ball object.
     // We may want to store an array of ball objects in the class, too.
-    Ball b = new Ball();
+    
+    Ball b = new Ball(x+150,y-125sssssssssssss, angle, 3);
     return b;
   }
 
   public void draw()
   {
+    rectMode(CORNER);
     // Draw the cannon.
     pushMatrix();
     //fill(0);
-    rotate(radians(angle));
     translate(x,y);
+    rotate(-1*radians(angle));
     rect(0,0,100,50);
     popMatrix();
   }

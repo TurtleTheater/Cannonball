@@ -2,14 +2,16 @@ Ball b;
 float t = 0.0;
 PImage bg;
 Cannon c;
+Ball [] ammo;
 
 void setup()
 {
   size ( 1000, 600 );
   bg = loadImage("Kirby background.png");
   frameRate ( 100 );
-  b = new Ball( 0, height - 1, 45, 3 );
-  c= new Cannon(500,300);
+  c= new Cannon(0,height - 1);
+  b = c.fire();
+  ammo= new Ball [5];
 }
 
 void draw()
