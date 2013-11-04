@@ -46,7 +46,7 @@ public class Cannon
     fill(0);
     translate(x,y);
     rotate(-1*radians(angle));
-    rect(0,0,length,width);
+    rect(0,0,length,-1*width);
     popMatrix();
   }
 
