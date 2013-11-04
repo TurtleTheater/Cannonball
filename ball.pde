@@ -38,6 +38,19 @@ public class Ball
     velY = -1 * v * sin ( radians ( angle ) );
   }
 
+  Ball(Ball myBall)
+  {
+    x = myBall.x;
+    y = myBall.y;
+    rotation = myBall.rotation;
+    velX = myBall.velX;
+    velY = myBall.velY;
+    velR = myBall.velR;
+    grav = myBall.grav;
+    r = myBall.r;
+    img = new PImage ( myBall.img );
+  }
+
   private void draw()
   {
     pushMatrix();
