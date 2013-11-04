@@ -39,7 +39,11 @@ void keyPressed()
   if (key == 's')
     c.aim (-1);
   if (key == ' ')
+  {
     b = c.fire ();
+    t = 0;
+  }
+  loop();
 }
 
 void printTime( int x, int y )
