@@ -43,9 +43,8 @@ public class Cannon
   public void draw()
   {
     rectMode(CORNER);
-    // Draw the cannon.
     pushMatrix();
-    //fill(0);
+    fill(0);
     translate(x,y);
     rotate(-1*radians(angle));
     rect(0,0,height,width);
