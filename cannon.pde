@@ -58,6 +58,13 @@ public class Cannon
     angle += myAngle;
   }
 
+  void printInfo(int t_x, int t_y )
+  {
+    textSize ( 12 );
+    fill ( 0 );
+    text ( "Cannon angle: " + nf ( angle, 3, 1 ) + " degrees", t_x, t_y );
+  }
+
   public float getX()
   {return x;}
   public float getY()
