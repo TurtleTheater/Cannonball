@@ -2,7 +2,6 @@ Ball b;
 Cannon c;
 float t = 0.0;
 PImage bg;
-Cannon c;
 Ball [] ammo;
 
 void setup()
@@ -33,12 +32,12 @@ void draw()
   }
 }
 
-void keyPressed
+void keyPressed()
 {
   if (key == 'w')
-  c.rotate (.1);
+  c.aim (.1);
   if (key == 's')
-  c.rotate (-.1);
+  c.aim (-.1);
   if (key == ' ')
   c.fire ();
 }
