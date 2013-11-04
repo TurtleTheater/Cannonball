@@ -36,7 +36,7 @@ public class Cannon
     float ballX, ballY;
     ballX = x + height * cos ( -1 * radians ( angle ) );
     ballY = y + width * sin ( -1 * radians ( angle ) );
-    Ball b = new Ball(ballX, ballY, angle, 3);
+    Ball b = new Ball(ballX, ballY, angle, v);
     return b;
   }
 
