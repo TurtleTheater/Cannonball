@@ -10,7 +10,7 @@ void setup()
   bg = loadImage( "Kirby background.png" );
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
-  b = c.fire();
+  b = new Ball( 10000, 10000 );
   ammo= new Ball[ 5 ];
 }
 
