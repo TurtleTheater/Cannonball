@@ -23,6 +23,7 @@ void draw()
   b.update();
   b.printInfo ( 170, 35 );
   c.draw();
+  c.printInfo ( 170, 50 );
 
   printTime ( 170, 20 );
 
