@@ -1,10 +1,10 @@
 public class Cannon
 {
-  private float x;
-  private float y;
+  private float x = 0;
+  private float y = height - 1;
   private int length = 100;
   private int width = 50;
-  private float angle;
+  private float angle = 45;
   private float v = 5;
 
   public Cannon()
