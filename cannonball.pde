@@ -7,11 +7,11 @@ Ball [] ammo;
 void setup()
 {
   size ( 1000, 600 );
-  bg = loadImage("Kirby background.png");
+  bg = loadImage( "Kirby background.png" );
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
   b = c.fire();
-  ammo= new Ball [5];
+  ammo= new Ball[ 5 ];
 }
 
 void draw()
@@ -36,11 +36,11 @@ void draw()
 
 void keyPressed()
 {
-  if (key == 'w')
-    c.aim (1);
-  if (key == 's')
-    c.aim (-1);
-  if (key == ' ')
+  if ( key == 'w' )
+    c.aim ( 1 );
+  if ( key == 's' )
+    c.aim ( -1 );
+  if ( key == ' ' )
   {
     b = c.fire ();
     t = 0;
