@@ -17,9 +17,9 @@ public class Player
   public String getName()
   {return name;}
   public int getScore()
-  {return Score;}
-  private Cannon getcannon;
+  {return score;}
+  public Cannon getCannon()
   {return cannon;}
-  private Ball[] getball_array()
+  public Ball[] getBalls()
   {return ball_array;}
 }
