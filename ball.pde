@@ -48,7 +48,6 @@ public class Ball
     velR = myBall.velR;
     grav = myBall.grav;
     r = myBall.r;
-    img = new PImage ( myBall.img );
   }
 
   private void draw()
