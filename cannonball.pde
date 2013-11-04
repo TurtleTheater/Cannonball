@@ -1,4 +1,5 @@
 Ball b;
+Cannon c;
 float t = 0.0;
 PImage bg;
 Cannon c;
@@ -9,7 +10,7 @@ void setup()
   size ( 1000, 600 );
   bg = loadImage("Kirby background.png");
   frameRate ( 100 );
-  c= new Cannon(0,height - 1);
+  c = new Cannon(0,height - 1);
   b = c.fire();
   ammo= new Ball [5];
 }
@@ -30,6 +31,16 @@ void draw()
   {
     noLoop();
   }
+}
+
+void keyPressed
+{
+  if (key == 'w')
+  c.rotate (.1);
+  if (key == 's')
+  c.rotate (-.1);
+  if (key == ' ')
+  c.fire ();
 }
 
 void printTime( int x, int y )
