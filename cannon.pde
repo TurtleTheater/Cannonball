@@ -5,7 +5,7 @@ public class Cannon
   private int length = 100;
   private int width = 50;
   private float angle;
-  private float v = 3;
+  private float v = 4;
 
   public Cannon()
   {

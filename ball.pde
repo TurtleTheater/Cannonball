@@ -6,7 +6,7 @@ public class Ball
   private float velX = 0; // The x velocity of the projectile.
   private float velY = 0;  // The y velocity of the projectile.
   private float velR = 1; // The speed that the projectile will spin.
-  private float grav = 0.01; // Gravity
+  private float grav = 0.05; // Gravity
   private int r = 40; // Radius
   PImage img = loadImage("NicholasCage.png");
 
