@@ -56,6 +56,13 @@ public class Cannon
   public void aim(float myAngle)
   {
     angle += myAngle;
+    if ( angle > 90 )
+    {
+      angle = 90;
+    } else if ( angle < 0 )
+    {
+      angle = 0;
+    }
   }
 
   void printInfo(int t_x, int t_y )
