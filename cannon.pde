@@ -31,7 +31,7 @@ public class Cannon
     // Return the ball object.
     // We may want to store an array of ball objects in the class, too.
     
-    Ball b = new Ball(x+150,y-125sssssssssssss, angle, 3);
+    Ball b = new Ball(x+150,y-125, angle, 3);
     return b;
   }
 
