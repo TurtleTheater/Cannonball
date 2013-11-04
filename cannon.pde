@@ -2,6 +2,8 @@ public class Cannon
 {
   private float x;
   private float y;
+  private int height = 100;
+  private int width = 50;
   private float angle;
   private float v;
 
@@ -32,8 +34,8 @@ public class Cannon
     // We may want to store an array of ball objects in the class, too.
     
     float ballX, ballY;
-    ballX = x + 100 * cos ( -1 * radians ( angle ) );
-    ballY = y + 50 * sin ( -1 * radians ( angle ) );
+    ballX = x + height * cos ( -1 * radians ( angle ) );
+    ballY = y + width * sin ( -1 * radians ( angle ) );
     Ball b = new Ball(ballX, ballY, angle, 3);
     return b;
   }
@@ -46,7 +48,7 @@ public class Cannon
     //fill(0);
     translate(x,y);
     rotate(-1*radians(angle));
-    rect(0,0,100,50);
+    rect(0,0,height,width);
     popMatrix();
   }
 
