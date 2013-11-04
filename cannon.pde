@@ -37,8 +37,9 @@ public class Cannon
     // Draw the cannon.
     pushMatrix();
     //fill(0);
-    rotate(radians(getAngle()));
-    rect(getX(),getY(),100,50);
+    rotate(radians(angle));
+    translate(x,y);
+    rect(0,0,100,50);
     popMatrix();
   }
 
