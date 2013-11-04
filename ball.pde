@@ -34,14 +34,8 @@ public class Ball
     x = myX;
     y = myY;
     
-    // NOTE: Gravity still works on the ball even if the angle
-    // is invalid. However, there will be no initial velocity
-    // if the angle is invalid.
-    if ( angle >= 0 && angle <= 90 )
-    {
-      velX = v * cos ( radians ( angle ) );
-      velY = -1 * v * sin ( radians ( angle ) );
-    }
+    velX = v * cos ( radians ( angle ) );
+    velY = -1 * v * sin ( radians ( angle ) );
   }
 
   private void draw()
