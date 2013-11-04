@@ -62,7 +62,7 @@ public class Cannon
   {
     textSize ( 12 );
     fill ( 0 );
-    text ( "Cannon angle: " + nf ( angle, 3, 1 ) + " degrees", t_x, t_y );
+    text ( "Cannon angle: " + nf ( angle, 2, 0 ) + " degrees", t_x, t_y );
   }
 
   public float getX()
