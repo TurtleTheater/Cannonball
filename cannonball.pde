@@ -35,11 +35,11 @@ void draw()
 void keyPressed()
 {
   if (key == 'w')
-  c.aim (.1);
+    c.aim (.1);
   if (key == 's')
-  c.aim (-.1);
+    c.aim (-.1);
   if (key == ' ')
-  b = c.fire ();
+    b = c.fire ();
 }
 
 void printTime( int x, int y )
