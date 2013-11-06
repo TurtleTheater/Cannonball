@@ -24,6 +24,10 @@ public class Target
     // Do nothing.
   }
 
+  public float leftEdge()
+  {return pos - r;}
+  public float rightEdge()
+  {return pos + r;}
   public float getPos()
   {return pos;}
   public float getR()
