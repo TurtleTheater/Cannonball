@@ -80,7 +80,7 @@ public class Ball
     rotation += velR;
   }
 
-  void update()
+  public void update()
   {
     if ( y < height )
     {
@@ -94,7 +94,7 @@ public class Ball
     draw();
   }
 
-  void printInfo(int t_x, int t_y )
+  public void printInfo(int t_x, int t_y )
   {
     textSize ( 12 );
     fill ( 0 );
