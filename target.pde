@@ -22,7 +22,7 @@ public class Target
   public void draw()
   {
     fill ( 255, 0, 0 );
-    stroke ( 255, 0, 0 );
+    stroke ( 0 );
 
     pushMatrix();
     translate ( pos, height - 1 );
