@@ -94,6 +94,15 @@ public class Ball
     draw();
   }
 
+  public boolean hit ( Target target )
+  {
+    if ( target.within ( leftEdge() ) || target.within ( rightEdge() ) )
+    {
+      return true;
+    }
+    return false;
+  }
+
   public void printInfo(int t_x, int t_y )
   {
     textSize ( 12 );
