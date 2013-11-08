@@ -2,6 +2,7 @@ public class Target
 {
   private float pos = 0;
   private float r = 30;
+  private float f_height = 75;
 
   public Target()
   {
@@ -29,6 +30,11 @@ public class Target
 
     rectMode ( RADIUS );
     rect ( 0, 0, r, 5 );
+    line ( 0, -5, 0, -f_height );
+    line ( 1, -5, 1, -f_height );
+    line ( -1, -5, -1, -f_height );
+    translate ( 0, -f_height );
+    triangle ( 0, 0, -20, -10, 0, -20 );
 
     popMatrix();
   }
