@@ -39,6 +39,15 @@ public class Target
     popMatrix();
   }
 
+  boolean within ( int p )
+  {
+    if ( p > leftEdge() && p < rightEdge() )
+    {
+      return true;
+    }
+    return false;
+  }
+
   public float leftEdge()
   {return pos - r;}
   public float rightEdge()
