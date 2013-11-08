@@ -102,6 +102,11 @@ public class Ball
   }
 
 
+  public void leftEdge()
+  {return x - r;}
+  public void rightEdge()
+  {return x + r;}
+
   protected void setX(float myX)
   {x = myX;}
   protected void setY(float myY)
