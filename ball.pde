@@ -87,6 +87,10 @@ public class Ball
       physX();
       physY();
       turn();
+      if ( y > height )
+      {
+        y = height;
+      }
     } else
     {
       y = height;
@@ -96,7 +100,8 @@ public class Ball
 
   public boolean hit ( Target target )
   {
-    if ( target.within ( leftEdge() ) || target.within ( rightEdge() ) )
+    if ( target.within ( leftEdge() + r / 2 ) || 
+         target.within ( rightEdge() - r / 2 ) )
     {
       return true;
     }
@@ -112,9 +117,9 @@ public class Ball
 
 
   public int leftEdge()
-  {return x - r;}
+  {return ( int ) ( x - r );}
   public int rightEdge()
-  {return x + r;}
+  {return ( int ) ( x + r );}
 
   protected void setX(float myX)
   {x = myX;}

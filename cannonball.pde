@@ -1,5 +1,6 @@
 Ball b;
 Cannon c;
+Target tar;
 float t = 0.0;
 PImage bg;
 Ball [] ammo;
@@ -11,6 +12,7 @@ void setup()
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
+  tar = new Target ( 400 );
   ammo= new Ball[ 5 ];
 }
 
@@ -25,11 +27,16 @@ void draw()
   b.printInfo ( 170, 35 );
   c.draw();
   c.printInfo ( 170, 50 );
+  tar.draw();
 
   printTime ( 170, 20 );
 
   if ( b.getY() >= height )
   {
+    if ( b.hit ( tar ) )
+    {
+      println ( "WINNING!" );
+    }
     noLoop();
   }
 }
