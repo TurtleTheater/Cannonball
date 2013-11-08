@@ -111,9 +111,9 @@ public class Ball
   }
 
 
-  public void leftEdge()
+  public int leftEdge()
   {return x - r;}
-  public void rightEdge()
+  public int rightEdge()
   {return x + r;}
 
   protected void setX(float myX)
