@@ -22,8 +22,6 @@ void draw()
   if ( b.getY() < height )
     t += 1.0 / frameRate;
 
-  b.update();
-  b.printInfo ( 170, 35 );
   c.draw();
   c.printInfo ( 170, 50 );
   for(int i=0;i<ammo.size();i++)
