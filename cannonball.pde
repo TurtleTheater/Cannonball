@@ -1,6 +1,5 @@
 Ball b;
 Cannon c;
-float t = 0.0;
 PImage bg;
 ArrayList<Ball> ammo;
 
@@ -19,9 +18,6 @@ void draw()
 {
   background ( bg );
 
-  if ( b.getY() < height )
-    t += 1.0 / frameRate;
-
   c.draw();
   c.printInfo ( 170, 50 );
   for(int i=0;i<ammo.size();i++)
@@ -29,9 +25,6 @@ void draw()
     ammo.get(i).update();
   }
   
-
-  printTime ( 170, 20 );
-
   if ( b.getY() >= height )
   {
     noLoop();
@@ -49,13 +42,6 @@ void keyPressed()
     b = c.fire ();
     ammo.add(b);
     println(ammo);
-    t = 0;
   }
   loop();
-}
-
-void printTime( int x, int y )
-{
-  fill ( 0 );
-  text ( "" + nf ( t, 0, 4 ) + " sec", x, y );
 }
