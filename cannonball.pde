@@ -2,7 +2,8 @@ Ball b;
 Cannon c;
 float t = 0.0;
 PImage bg;
-Ball [] ammo;
+ArrayList<Ball> ammo;
+
 
 void setup()
 {
@@ -11,7 +12,7 @@ void setup()
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
-  ammo= new Ball[ 5 ];
+  ammo= new ArrayList<Ball>();
 }
 
 void draw()
@@ -25,6 +26,11 @@ void draw()
   b.printInfo ( 170, 35 );
   c.draw();
   c.printInfo ( 170, 50 );
+  for(int i=0;i<ammo.size();i++)
+  {
+    ammo.get(i).update();
+  }
+  
 
   printTime ( 170, 20 );
 
@@ -43,6 +49,8 @@ void keyPressed()
   if ( key == ' ' )
   {
     b = c.fire ();
+    ammo.add(b);
+    println(ammo);
     t = 0;
   }
   loop();
