@@ -1,9 +1,8 @@
 Ball b;
 Cannon c;
 Target tar;
-float t = 0.0;
 PImage bg;
-Ball [] ammo;
+ArrayList<Ball> ammo;
 
 void setup()
 {
@@ -13,24 +12,22 @@ void setup()
   c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
   tar = new Target ( 400 );
-  ammo= new Ball[ 5 ];
+  ammo= new ArrayList<Ball>();
 }
 
 void draw()
 {
   background ( bg );
 
-  if ( b.getY() < height )
-    t += 1.0 / frameRate;
-
-  b.update();
-  b.printInfo ( 170, 35 );
   c.draw();
   c.printInfo ( 170, 50 );
   tar.draw();
 
-  printTime ( 170, 20 );
-
+  for(int i=0;i<ammo.size();i++)
+  {
+    ammo.get(i).update();
+  }
+  
   if ( b.getY() >= height )
   {
     if ( b.hit ( tar ) )
@@ -50,13 +47,8 @@ void keyPressed()
   if ( key == ' ' )
   {
     b = c.fire ();
-    t = 0;
+    ammo.add(b);
+    println(ammo);
   }
   loop();
-}
-
-void printTime( int x, int y )
-{
-  fill ( 0 );
-  text ( "" + nf ( t, 0, 4 ) + " sec", x, y );
 }
