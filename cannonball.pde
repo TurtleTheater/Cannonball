@@ -37,9 +37,9 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == 'w' )
+  if ( key == CODED && keyCode == UP )
     c.aim ( 1 );
-  if ( key == 's' )
+  if ( key == CODED && keyCode == DOWN )
     c.aim ( -1 );
   if ( key == ' ' )
   {
