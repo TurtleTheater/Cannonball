@@ -57,6 +57,7 @@ void keyPressed()
     status = "running";
   }
   loop();
+}
 
 void score(int t_x, int t_y)
 {
