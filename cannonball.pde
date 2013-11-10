@@ -48,7 +48,6 @@ void keyPressed()
   {
     b = c.fire ();
     ammo.add(b);
-    println(ammo);
   }
   loop();
 }
