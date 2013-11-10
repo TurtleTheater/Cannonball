@@ -43,8 +43,8 @@ void draw()
     noLoop();
   }
   tar.draw();
-  score ( 170, 65 );
-  status ( 170, 80 );
+  score ( 170, 20 );
+  status ( 170, 35 );
 }
 
 void keyPressed()
