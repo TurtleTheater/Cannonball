@@ -25,6 +25,6 @@ public class Player
   {return score;}
   public Cannon getCannon()
   {return cannon;}
-  public Ball[] getBalls()
-  {return ball_array;}
+  public ArrayList<Ball> getAmmo()
+  {return ammo;}
 }
