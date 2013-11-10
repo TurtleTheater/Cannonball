@@ -57,6 +57,7 @@ public class Ball
     rotate(radians(rotation));
     imageMode(CENTER);
     fill(0);
+    stroke(0);
     ellipse(0,0,r,r);
     image(img, 0, 0, r, r);
     popMatrix();
@@ -79,13 +80,17 @@ public class Ball
     rotation += velR;
   }
 
-  void update()
+  public void update()
   {
     if ( y < height )
     {
       physX();
       physY();
       turn();
+      if ( y > height )
+      {
+        y = height;
+      }
     } else
     {
       y = height;
@@ -93,13 +98,28 @@ public class Ball
     draw();
   }
 
-  void printInfo(int t_x, int t_y )
+  public boolean hit ( Target target )
+  {
+    if ( target.within ( leftEdge() + r / 2 ) || 
+         target.within ( rightEdge() - r / 2 ) )
+    {
+      return true;
+    }
+    return false;
+  }
+
+  public void printInfo(int t_x, int t_y )
   {
     textSize ( 12 );
     fill ( 0 );
     text ( "(" + nf ( x, 3, 4 ) + ", " + nf ( y, 3, 4 ) + ")", t_x, t_y );
   }
 
+
+  public int leftEdge()
+  {return ( int ) ( x - r );}
+  public int rightEdge()
+  {return ( int ) ( x + r );}
 
   protected void setX(float myX)
   {x = myX;}

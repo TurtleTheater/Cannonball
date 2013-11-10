@@ -1,5 +1,6 @@
 Ball b;
 Cannon c;
+Target tar;
 PImage bg;
 ArrayList<Ball> ammo;
 int counter=5;
@@ -12,6 +13,7 @@ void setup()
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
+  tar = new Target();
   ammo= new ArrayList<Ball>();
 }
 
@@ -21,6 +23,7 @@ void draw()
 
   c.draw();
   c.printInfo ( 170, 50 );
+
   for(int i=0;i<ammo.size();i++)
   {
     ammo.get(i).update();
@@ -28,11 +31,20 @@ void draw()
   
   if ( b.getY() >= height )
   {
-    status = "stopped";
+    if ( b.hit ( tar ) )
+    {
+      status = "hit";
+      tar.rand_pos();
+    }
+    else if ( status != "hit" )
+    {
+      status = "miss";
+    }
     noLoop();
   }
-  score( 170, 65);
-  status( 170, 80);
+  tar.draw();
+  score ( 170, 65 );
+  status ( 170, 80 );
 }
 
 void keyPressed()
@@ -51,14 +63,14 @@ void keyPressed()
   loop();
 }
 
-void score(int t_x, int t_y)
+void score ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
   text ( counter, t_x, t_y );
 }
 
-void status(int t_x, int t_y)
+void status ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );

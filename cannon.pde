@@ -46,6 +46,7 @@ public class Cannon
     rectMode(CORNER);
     pushMatrix();
     fill(0);
+    stroke(0);
     translate(x,y);
     rotate(-1*radians(angle));
     rect(0,0,length,-1*width);
@@ -78,4 +79,8 @@ public class Cannon
   {return y;}
   public float getAngle()
   {return angle;}
+  public int getWidth()
+  {return width;}
+  public int getLength()
+  {return length;}
 }
