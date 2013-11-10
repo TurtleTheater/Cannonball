@@ -23,7 +23,6 @@ void draw()
 
   c.draw();
   c.printInfo ( 170, 50 );
-  tar.draw();
 
   for(int i=0;i<ammo.size();i++)
   {
@@ -34,11 +33,16 @@ void draw()
   {
     if ( b.hit ( tar ) )
     {
-      println ( "WINNING!" );
+      status = "hit";
+      tar.rand_pos();
     }
-    status = "stopped";
+    else if ( status != "hit" )
+    {
+      status = "miss";
+    }
     noLoop();
   }
+  tar.draw();
   score( 170, 65);
   status( 170, 80);
 }
