@@ -3,6 +3,7 @@ Cannon c;
 float t = 0.0;
 PImage bg;
 Ball [] ammo;
+int counter=5;
 
 void setup()
 {
@@ -32,6 +33,7 @@ void draw()
   {
     noLoop();
   }
+  score( 170, 65);
 }
 
 void keyPressed()
@@ -44,6 +46,7 @@ void keyPressed()
   {
     b = c.fire ();
     t = 0;
+    counter--;
   }
   loop();
 }
@@ -52,4 +55,11 @@ void printTime( int x, int y )
 {
   fill ( 0 );
   text ( "" + nf ( t, 0, 4 ) + " sec", x, y );
+}
+
+void score(int t_x, int t_y)
+{
+textSize ( 12 );
+fill ( 0 );
+text ( counter, t_x, t_y );
 }
