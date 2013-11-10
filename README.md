@@ -3,7 +3,7 @@ Cannonball
 
 Firing a cannonball from a cannon, made fun!
 
-Use the "w" and "s" keys to aim the cannon up and down.
+Use the up and down keys to aim the cannon up and down.
 
 Use the space bar to fire.
 
