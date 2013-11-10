@@ -3,7 +3,7 @@ public class Player
   private String name;
   private int score;
   private Cannon cannon;
-  private Ball[] ball_array;
+  ArrayList<Ball> ammo;
 
   public Player()
   {
@@ -12,6 +12,11 @@ public class Player
   public Player(String myName)
   {
     name = myName;
+  }
+
+  public void fire_cannon()
+  {
+    ammo.add ( cannon.fire() );
   }
   
   public String getName()
