@@ -39,7 +39,7 @@ public class Target
     popMatrix();
   }
 
-  boolean within ( int p )
+  public boolean within ( int p )
   {
     if ( p > leftEdge() && p < rightEdge() )
     {
