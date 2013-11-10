@@ -6,7 +6,7 @@ public class Target
 
   public Target()
   {
-    // Do nothing.
+    rand_pos();
   }
 
   public Target(float myPos)
@@ -46,6 +46,13 @@ public class Target
       return true;
     }
     return false;
+  }
+
+  public void rand_pos()
+  {
+    int start = c.getWidth() + (int)r + 10;
+    int end = width - (int)r;
+    pos = random ( start, end );
   }
 
   public float leftEdge()
