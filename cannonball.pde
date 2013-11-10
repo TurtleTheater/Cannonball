@@ -43,8 +43,8 @@ void draw()
     noLoop();
   }
   tar.draw();
-  score( 170, 65);
-  status( 170, 80);
+  score ( 170, 65 );
+  status ( 170, 80 );
 }
 
 void keyPressed()
@@ -63,14 +63,14 @@ void keyPressed()
   loop();
 }
 
-void score(int t_x, int t_y)
+void score ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
   text ( counter, t_x, t_y );
 }
 
-void status(int t_x, int t_y)
+void status ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
