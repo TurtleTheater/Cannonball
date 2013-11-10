@@ -2,7 +2,8 @@ Ball b;
 Cannon c;
 PImage bg;
 ArrayList<Ball> ammo;
-
+int counter=5;
+String status;
 
 void setup()
 {
@@ -27,8 +28,11 @@ void draw()
   
   if ( b.getY() >= height )
   {
+    status = "stopped";
     noLoop();
   }
+  score( 170, 65);
+  status( 170, 80);
 }
 
 void keyPressed()
@@ -41,6 +45,21 @@ void keyPressed()
   {
     b = c.fire ();
     ammo.add(b);
+    counter--;
+    status = "running";
   }
   loop();
+
+void score(int t_x, int t_y)
+{
+  textSize ( 12 );
+  fill ( 0 );
+  text ( counter, t_x, t_y );
+}
+
+void status(int t_x, int t_y)
+{
+  textSize ( 12 );
+  fill ( 0 );
+  text ( status, t_x, t_y);
 }
