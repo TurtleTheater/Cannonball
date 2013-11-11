@@ -13,7 +13,7 @@ Eric Dilmore \<erd130030\> (@geppettodivacin)
 
 Matthew Cunningham \<mac130130\> (@matthewcunningham)
 
-Kevin Hwang \<exh131330\> (@1turtles)
+Kevin Hwang \<exh131330\> (@1turtles) *did not contribute for the last two weeks*
 
 Jack Murray \<jam130530\> (@halfoff)
 
