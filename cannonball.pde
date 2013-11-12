@@ -76,3 +76,8 @@ void status ( int t_x, int t_y )
   fill ( 0 );
   text ( "Status: " + status, t_x, t_y);
 }
+
+void reset()
+{
+  // Reset function goes here.
+}
