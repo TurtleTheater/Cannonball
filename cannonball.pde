@@ -24,6 +24,11 @@ void draw()
   c.draw();
   c.printInfo ( 170, 50 );
 
+  if (counter == 0)
+  {
+   game_over ( 100, 300 );
+  }
+
   for(int i=0;i<ammo.size();i++)
   {
     ammo.get(i).update();
@@ -49,11 +54,11 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == CODED && keyCode == UP )
+  if ( key == CODED && keyCode == UP && counter != 0)
     c.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN )
+  if ( key == CODED && keyCode == DOWN && counter != 0)
     c.aim ( -1 );
-  if ( key == ' ' )
+  if ( key == ' ' && counter != 0)
   {
     b = c.fire ();
     ammo.add(b);
@@ -61,6 +66,13 @@ void keyPressed()
     status = "running";
   }
   loop();
+}
+
+void game_over ( int t_x, int t_y )
+{
+  textSize (72);
+  fill ( 0 );
+  text ( "GAME OVER! You lose.", t_x, t_y );
 }
 
 void score ( int t_x, int t_y )
