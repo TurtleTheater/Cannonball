@@ -47,19 +47,25 @@ void draw()
   status ( 170, 35 );
 }
 
-void keyPressed()
+void keyPressed( int t_x, int t_y )
 {
-  if ( key == CODED && keyCode == UP )
+  if ( key == CODED && keyCode == UP && counter != 0)
     c.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN )
+  if ( key == CODED && keyCode == DOWN && counter != 0)
     c.aim ( -1 );
-  if ( key == ' ' )
+  if ( key == ' ' && counter != 0)
   {
     b = c.fire ();
     ammo.add(b);
     counter--;
     status = "running";
   }
+  if (counter == 0)
+    {
+     textSize (72);
+     fill ( 0 );
+     text ( "GAME OVER YOU SUCK.", t_x, t_y  );
+    }
   loop();
 }
 
