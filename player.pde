@@ -1,7 +1,7 @@
 public class Player
 {
   private String name;
-  private int score;
+ // private int points;
   private Cannon cannon;
   ArrayList<Ball> ammo;
 
@@ -18,6 +18,23 @@ public class Player
   {
     ammo.add ( cannon.fire() );
   }
+  
+  public int score()
+  {
+    int points;
+    for(i=0; i<ammo.size();i++)
+    {
+      if(ammo.get(i).hit())
+      {
+        points+=10;
+      }
+      
+    }
+    return points;
+    
+    
+  }
+  
   
   public String getName()
   {return name;}
