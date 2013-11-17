@@ -8,6 +8,7 @@ public class Ball
   private float velR = 3; // The speed that the projectile will spin.
   private float grav = 0.05; // Gravity
   private int r = 40; // Radius
+  private boolean hasHit= false;
   PImage img = loadImage("NicholasCage.png");
 
   Ball()
@@ -103,11 +104,17 @@ public class Ball
     if ( target.within ( leftEdge() + r / 2 ) || 
          target.within ( rightEdge() - r / 2 ) )
     {
+      hasHit=true;
       return true;
     }
     return false;
   }
-
+  
+  public boolean hasHit()
+  {
+    return hasHit;
+  }
+  
   public void printInfo(int t_x, int t_y )
   {
     textSize ( 12 );
