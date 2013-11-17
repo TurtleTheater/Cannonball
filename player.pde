@@ -21,10 +21,10 @@ public class Player
   
   public int score()
   {
-    int points;
-    for(i=0; i<ammo.size();i++)
+    int points=0;
+    for(int i=0; i<ammo.size();i++)
     {
-      if(ammo.get(i).hit())
+      if(ammo.get(i).hasHit())
       {
         points+=10;
       }
@@ -38,8 +38,6 @@ public class Player
   
   public String getName()
   {return name;}
-  public int getScore()
-  {return score;}
   public Cannon getCannon()
   {return cannon;}
   public ArrayList<Ball> getAmmo()
