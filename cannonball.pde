@@ -5,6 +5,7 @@ PImage bg;
 ArrayList<Ball> ammo;
 int counter=5;
 String status;
+Player p1;
 
 void setup()
 {
@@ -15,23 +16,24 @@ void setup()
   b = new Ball( 10000, 10000 );
   tar = new Target();
   ammo= new ArrayList<Ball>();
+  p1 = new Player ( "Player 1" );
 }
 
 void draw()
 {
   background ( bg );
 
-  c.draw();
-  c.printInfo ( 170, 50 );
+  p1.cannon.draw();
+  p1.cannon.printInfo ( 170, 50 );
 
   if (counter == 0)
   {
     game_over ( 100, 300 );
   }
 
-  for(int i=0;i<ammo.size();i++)
+  for(int i=0;i<p1.ammo.size();i++)
   {
-    ammo.get(i).update();
+    p1.ammo.get(i).update();
   }
   
   if ( b.getY() >= height )
@@ -55,13 +57,13 @@ void draw()
 void keyPressed()
 {
   if ( key == CODED && keyCode == UP && counter != 0)
-    c.aim ( 1 );
+    p1.cannon.aim ( 1 );
   if ( key == CODED && keyCode == DOWN && counter != 0)
-    c.aim ( -1 );
+    p1.cannon.aim ( -1 );
   if ( key == ' ' && counter != 0)
   {
-    b = c.fire ();
-    ammo.add(b);
+    b = p1.cannon.fire ();
+    p1.ammo.add(b);
     counter--;
     status = "running";
   }
