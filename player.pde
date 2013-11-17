@@ -6,11 +6,15 @@ public class Player
 
   public Player()
   {
-    // Do nothing
+    name = "Player";
+    cannon = new Cannon ( 50, height-1, 45 );
+    ammo = new ArrayList<Ball>();
   }
   public Player(String myName)
   {
     name = myName;
+    cannon = new Cannon ( 50, height-1, 45 );
+    ammo = new ArrayList<Ball>();
   }
 
   public void fire_cannon()
