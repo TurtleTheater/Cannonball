@@ -26,7 +26,7 @@ void draw()
 
   if (counter == 0)
   {
-   game_over ( 100, 300 );
+    game_over ( 100, 300 );
   }
 
   for(int i=0;i<ammo.size();i++)
