@@ -1,7 +1,6 @@
 public class Player
 {
   private String name;
- // private int points;
   private Cannon cannon;
   ArrayList<Ball> ammo;
 
