@@ -35,6 +35,13 @@ public class Player
     }
     return points;
   }
+
+  public void printScore ( int t_x, int t_y )
+  {
+    textSize ( 12 );
+    fill ( 0 );
+    text ( name + ": " + score(), t_x, t_y );
+  }
   
   
   public String getName()

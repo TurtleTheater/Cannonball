@@ -51,7 +51,7 @@ void draw()
   }
   tar.draw();
   score ( 170, 20 );
-  status ( 170, 35 );
+  p1.printScore ( 170, 35 );
 }
 
 void keyPressed()
