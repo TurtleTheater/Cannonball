@@ -60,6 +60,8 @@ void keyPressed()
     p1.cannon.aim ( 1 );
   if ( key == CODED && keyCode == DOWN && attempts != 0 )
     p1.cannon.aim ( -1 );
+  if ( key == 'r' )
+    reset();
   if ( key == ' ' && attempts != 0)
   {
     b = p1.cannon.fire ();
@@ -94,5 +96,11 @@ void status ( int t_x, int t_y )
 
 void reset()
 {
-  // Reset function goes here.
+  
+  c = new Cannon( 50, height-1, 45 );
+  b = new Ball( 10000, 10000 );
+  tar = new Target();
+  ammo= new ArrayList<Ball>();
+  counter = 5;
+  
 }
