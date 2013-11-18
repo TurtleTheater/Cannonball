@@ -53,7 +53,10 @@ void keyPressed()
     c.aim ( 1 );
   if ( key == CODED && keyCode == DOWN )
     c.aim ( -1 );
+  if ( key == 'r' )
+    reset();
   if ( key == ' ' )
+ 
   {
     b = c.fire ();
     ammo.add(b);
@@ -79,5 +82,11 @@ void status ( int t_x, int t_y )
 
 void reset()
 {
-  // Reset function goes here.
+  
+  c = new Cannon( 50, height-1, 45 );
+  b = new Ball( 10000, 10000 );
+  tar = new Target();
+  ammo= new ArrayList<Ball>();
+  counter = 5;
+  
 }
