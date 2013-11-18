@@ -96,11 +96,8 @@ void status ( int t_x, int t_y )
 
 void reset()
 {
-  
-  c = new Cannon( 50, height-1, 45 );
-  b = new Ball( 10000, 10000 );
+  p1.cannon = new Cannon ( 50, height-1, 45 );
+  p1.ammo= new ArrayList<Ball>();
   tar = new Target();
-  ammo= new ArrayList<Ball>();
-  counter = 5;
-  
+  attempts = 5;
 }
