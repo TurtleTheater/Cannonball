@@ -10,7 +10,7 @@ public class Player
     cannon = new Cannon ( 50, height-1, 45 );
     ammo = new ArrayList<Ball>();
   }
-  public Player(String myName)
+  public Player ( String myName )
   {
     name = myName;
     cannon = new Cannon ( 50, height-1, 45 );
@@ -25,17 +25,15 @@ public class Player
   public int score()
   {
     int points=0;
-    for(int i=0; i<ammo.size();i++)
+    for( int i = 0; i < ammo.size(); i++ )
     {
-      if(ammo.get(i).hasHit())
+      if ( ammo.get(i).hasHit() )
       {
         points+=10;
       }
       
     }
     return points;
-    
-    
   }
   
   

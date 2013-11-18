@@ -12,14 +12,14 @@ public class Cannon
     // I don't think we need anything here...
   }
 
-  public Cannon(float myX, float myY)
+  public Cannon ( float myX, float myY )
   {
     x = myX;
     y = myY;
     angle=45;
   }
 
-  public Cannon(float myX, float myY, float myAngle)
+  public Cannon ( float myX, float myY, float myAngle )
   {
     x = myX;
     y = myY;
@@ -54,7 +54,7 @@ public class Cannon
   }
 
   //Rotate is a reserved method used to get shapes to turn. Changed to turn to aim to avoid conflict.
-  public void aim(float myAngle)
+  public void aim ( float myAngle)
   {
     angle += myAngle;
     if ( angle > 90 )
@@ -66,7 +66,7 @@ public class Cannon
     }
   }
 
-  void printInfo(int t_x, int t_y )
+  void printInfo ( int t_x, int t_y )
   {
     textSize ( 12 );
     fill ( 0 );

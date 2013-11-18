@@ -26,7 +26,7 @@ void draw()
   p1.cannon.draw();
   p1.cannon.printInfo ( 170, 50 );
 
-  for(int i=0;i<p1.ammo.size();i++)
+  for ( int i = 0; i < p1.ammo.size(); i++ )
   {
     p1.ammo.get(i).update();
   }
@@ -43,7 +43,7 @@ void draw()
       status = "miss";
     }
 
-    if (attempts == 0)
+    if ( attempts == 0 )
     {
       game_over ( 290, 300 );
     }
@@ -56,9 +56,9 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == CODED && keyCode == UP && attempts != 0)
+  if ( key == CODED && keyCode == UP && attempts != 0 )
     p1.cannon.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN && attempts != 0)
+  if ( key == CODED && keyCode == DOWN && attempts != 0 )
     p1.cannon.aim ( -1 );
   if ( key == ' ' && attempts != 0)
   {
@@ -72,7 +72,7 @@ void keyPressed()
 
 void game_over ( int t_x, int t_y )
 {
-  textSize (72);
+  textSize ( 72 );
   fill ( 0 );
   text ( "GAME OVER!", t_x, t_y );
   text ( "You scored " + p1.score() + " points.", t_x - 150, t_y + 65 );
