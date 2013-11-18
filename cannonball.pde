@@ -26,11 +26,6 @@ void draw()
   p1.cannon.draw();
   p1.cannon.printInfo ( 170, 50 );
 
-  if (counter == 0)
-  {
-    game_over ( 100, 300 );
-  }
-
   for(int i=0;i<p1.ammo.size();i++)
   {
     p1.ammo.get(i).update();
@@ -46,6 +41,11 @@ void draw()
     else if ( status != "hit" )
     {
       status = "miss";
+    }
+
+    if (counter == 0)
+    {
+      game_over ( 290, 300 );
     }
     noLoop();
   }
@@ -74,7 +74,8 @@ void game_over ( int t_x, int t_y )
 {
   textSize (72);
   fill ( 0 );
-  text ( "GAME OVER! You lose.", t_x, t_y );
+  text ( "GAME OVER!", t_x, t_y );
+  text ( "You scored " + p1.score() + " points.", t_x - 150, t_y + 65 );
 }
 
 void score ( int t_x, int t_y )
