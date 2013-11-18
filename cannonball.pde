@@ -3,7 +3,7 @@ Cannon c;
 Target tar;
 PImage bg;
 ArrayList<Ball> ammo;
-int counter=5;
+int attempts=5;
 String status;
 Player p1;
 
@@ -43,7 +43,7 @@ void draw()
       status = "miss";
     }
 
-    if (counter == 0)
+    if (attempts == 0)
     {
       game_over ( 290, 300 );
     }
@@ -56,15 +56,15 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == CODED && keyCode == UP && counter != 0)
+  if ( key == CODED && keyCode == UP && attempts != 0)
     p1.cannon.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN && counter != 0)
+  if ( key == CODED && keyCode == DOWN && attempts != 0)
     p1.cannon.aim ( -1 );
-  if ( key == ' ' && counter != 0)
+  if ( key == ' ' && attempts != 0)
   {
     b = p1.cannon.fire ();
     p1.ammo.add(b);
-    counter--;
+    attempts--;
     status = "running";
   }
   loop();
@@ -82,7 +82,7 @@ void score ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
-  text ( "Number of Attempts: " + counter, t_x, t_y );
+  text ( "Number of Attempts: " + attempts, t_x, t_y );
 }
 
 void status ( int t_x, int t_y )
