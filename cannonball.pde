@@ -65,7 +65,7 @@ void keyPressed()
   if ( key == ' ' && attempts != 0)
   {
     b = p1.cannon.fire ();
-    p1.ammo.add(b);
+    p1.ammo.add ( b );
     attempts--;
     status = "running";
   }
