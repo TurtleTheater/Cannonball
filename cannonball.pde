@@ -70,7 +70,7 @@ void keyPressed()
     curPlayer.cannon.aim ( -1 );
   if ( key == 'r' )
     reset();
-  if ( key == ' ' && attempts != 0)
+  if ( key == ' ' && attempts != 0 && b.getY() >= height)
   {
     b = curPlayer.cannon.fire ();
     curPlayer.ammo.add ( b );
