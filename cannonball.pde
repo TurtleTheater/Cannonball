@@ -3,9 +3,11 @@ Cannon c;
 Target tar;
 PImage bg;
 ArrayList<Ball> ammo;
-int attempts=5;
+int attempts = 5;
 String status;
-Player p1;
+ArrayList<Player> player;
+Player curPlayer;
+int playerNum = 0;
 
 void setup()
 {
@@ -16,19 +18,22 @@ void setup()
   b = new Ball( 10000, 10000 );
   tar = new Target();
   ammo= new ArrayList<Ball>();
-  p1 = new Player ( "Player 1" );
+  player = new ArrayList<Player>();
+  player.add ( new Player ( "Player 1" ) );
+  player.add ( new Player ( "Player 2" ) );
+  curPlayer = player.get ( playerNum );
 }
 
 void draw()
 {
   background ( bg );
 
-  p1.cannon.draw();
-  p1.cannon.printInfo ( 170, 50 );
+  curPlayer.cannon.draw();
+  curPlayer.cannon.printInfo ( 170, 50 );
 
-  for ( int i = 0; i < p1.ammo.size(); i++ )
+  for ( int i = 0; i < curPlayer.ammo.size(); i++ )
   {
-    p1.ammo.get(i).update();
+    curPlayer.ammo.get(i).update();
   }
   
   if ( b.getY() >= height )
@@ -51,23 +56,27 @@ void draw()
   }
   tar.draw();
   score ( 170, 20 );
-  p1.printScore ( 170, 35 );
+  curPlayer.printScore ( 170, 35 );
 }
 
 void keyPressed()
 {
   if ( key == CODED && keyCode == UP && attempts != 0 )
-    p1.cannon.aim ( 1 );
+    curPlayer.cannon.aim ( 1 );
   if ( key == CODED && keyCode == DOWN && attempts != 0 )
-    p1.cannon.aim ( -1 );
+    curPlayer.cannon.aim ( -1 );
   if ( key == 'r' )
     reset();
   if ( key == ' ' && attempts != 0)
   {
-    b = p1.cannon.fire ();
-    p1.ammo.add ( b );
+    b = curPlayer.cannon.fire ();
+    curPlayer.ammo.add ( b );
     attempts--;
     status = "running";
+
+    playerNum += 1;
+    playerNum %= player.size();
+    curPlayer = player.get ( playerNum );
   }
   loop();
 }
@@ -77,7 +86,7 @@ void game_over ( int t_x, int t_y )
   textSize ( 72 );
   fill ( 0 );
   text ( "GAME OVER!", t_x, t_y );
-  text ( "You scored " + p1.score() + " points.", t_x - 150, t_y + 65 );
+  text ( "You scored " + curPlayer.score() + " points.", t_x - 150, t_y + 65 );
 }
 
 void score ( int t_x, int t_y )
@@ -96,8 +105,8 @@ void status ( int t_x, int t_y )
 
 void reset()
 {
-  p1.cannon = new Cannon ( 50, height-1, 45 );
-  p1.ammo= new ArrayList<Ball>();
+  curPlayer.cannon = new Cannon ( 50, height-1, 45 );
+  curPlayer.ammo= new ArrayList<Ball>();
   tar = new Target();
   attempts = 5;
 }
