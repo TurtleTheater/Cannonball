@@ -86,10 +86,24 @@ void keyPressed()
 
 void game_over ( int t_x, int t_y )
 {
+  Player winner = winner();
   textSize ( 72 );
   fill ( 0 );
-  text ( "GAME OVER!", t_x, t_y );
-  text ( "You scored " + curPlayer.score() + " points.", t_x - 150, t_y + 65 );
+  text ( winner.getName() + " wins!", t_x, t_y );
+  text ( "You scored " + winner.score() + " points.", t_x - 150, t_y + 65 );
+}
+
+Player winner()
+{
+  Player winner = player.get ( 0 );
+  for ( Player p : player )
+  {
+    if ( p.score() > winner.score() )
+    {
+      winner = p;
+    }
+  }
+  return winner;
 }
 
 void score ( int t_x, int t_y )
