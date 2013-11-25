@@ -31,9 +31,12 @@ void draw()
   curPlayer.cannon.draw();
   curPlayer.cannon.printInfo ( 170, 50 );
 
-  for ( int i = 0; i < curPlayer.ammo.size(); i++ )
+  for ( Player p : player )
   {
-    curPlayer.ammo.get(i).update();
+    for ( int i = 0; i < p.ammo.size(); i++ )
+    {
+      p.ammo.get(i).update();
+    }
   }
   
   if ( b.getY() >= height )
