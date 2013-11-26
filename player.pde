@@ -3,7 +3,9 @@ public class Player
   private String name;
  // private int points;
   private Cannon cannon;
-  ArrayList<Ball> ammo;
+  private ArrayList<Ball> ammo;
+  private int atmps;
+  
 
   public Player()
   {
@@ -12,6 +14,7 @@ public class Player
   public Player(String myName)
   {
     name = myName;
+    atmps=5;
   }
 
   public void fire_cannon()
@@ -33,6 +36,11 @@ public class Player
     return points;
     
     
+  }
+  
+  public int getAttempts()
+  {
+    return atmps-ammo.size();
   }
   
   
