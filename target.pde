@@ -50,7 +50,7 @@ public class Target
 
   public void rand_pos()
   {
-    int start = c.getWidth() + (int)r + 10;
+    int start = width + (int)r + 10;
     int end = width - (int)r;
     pos = random ( start, end );
   }

@@ -14,6 +14,8 @@ public class Player
   public Player(String myName)
   {
     name = myName;
+    ammo= new ArrayList<Ball>();
+    cannon= new Cannon( 50, height-1, 45 );
     atmps=5;
   }
 

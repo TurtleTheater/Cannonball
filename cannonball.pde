@@ -3,30 +3,30 @@ Cannon c;
 Target tar;
 PImage bg;
 ArrayList<Ball> ammo;
-int counter=5;
 String status;
+Player p;
 
 void setup()
 {
   size ( 1000, 600 );
   bg = loadImage( "Kirby background.png" );
   frameRate ( 100 );
-  c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
   tar = new Target();
-  ammo= new ArrayList<Ball>();
+  p=new Player("Mr. Cage");
+  
 }
 
 void draw()
 {
   background ( bg );
 
-  c.draw();
-  c.printInfo ( 170, 50 );
+  p.getCannon().draw();
+  p.getCannon().printInfo ( 170, 50 );
 
-  for(int i=0;i<ammo.size();i++)
+  for(int i=0;i<p.getAmmo().size();i++)
   {
-    ammo.get(i).update();
+    p.getAmmo().get(i).update();
   }
   
   if ( b.getY() >= height )
@@ -51,14 +51,12 @@ void draw()
 void keyPressed()
 {
   if ( key == CODED && keyCode == UP )
-    c.aim ( 1 );
+    p.getCannon().aim ( 1 );
   if ( key == CODED && keyCode == DOWN )
-    c.aim ( -1 );
+    p.getCannon().aim ( -1 );
   if ( key == ' ' )
   {
-    b = c.fire ();
-    ammo.add(b);
-    counter--;
+   p.fire_cannon();
     status = "running";
   }
   loop();
@@ -68,7 +66,7 @@ void score ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
-  text ( "Number of Attempts: " + counter, t_x, t_y );
+  text ( "Number of Attempts: " + p.getAttempts(), t_x, t_y );
 }
 
 void status ( int t_x, int t_y )
