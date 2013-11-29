@@ -9,12 +9,12 @@ public class Target
     rand_pos();
   }
 
-  public Target(float myPos)
+  public Target ( float myPos )
   {
     pos = myPos;
   }
   
-  public Target(float myPos, float myR)
+  public Target ( float myPos, float myR )
   {
     pos = myPos;
     r = myR;
@@ -50,8 +50,8 @@ public class Target
 
   public void rand_pos()
   {
-    int start = width + (int)r + 10;
-    int end = width - (int)r;
+    int start = c.getWidth() + ( int ) r + 10;
+    int end = width - ( int ) r;
     pos = random ( start, end );
   }
 

@@ -17,20 +17,20 @@ public class Ball
     y = r / 2;
   }
 
-  Ball(float myX, float myY)
+  Ball ( float myX, float myY )
   {
     x = myX;
     y = myY;
   }
 
-  Ball(float myX, float myY, float gravity)
+  Ball ( float myX, float myY, float gravity )
   {
     x = myX;
     y = myY;
     grav = gravity;
   }
 
-  Ball(float myX, float myY, float angle, float v)
+  Ball ( float myX, float myY, float angle, float v )
   {
     x = myX;
     y = myY;
@@ -39,7 +39,7 @@ public class Ball
     velY = -1 * v * sin ( radians ( angle ) );
   }
 
-  Ball(Ball myBall)
+  Ball ( Ball myBall )
   {
     x = myBall.x;
     y = myBall.y;
@@ -54,26 +54,26 @@ public class Ball
   private void draw()
   {
     pushMatrix();
-    translate(x, y);
-    rotate(radians(rotation));
-    imageMode(CENTER);
-    fill(0);
-    stroke(0);
-    ellipse(0,0,r,r);
-    image(img, 0, 0, r, r);
+    translate ( x, y );
+    rotate ( radians ( rotation ) );
+    imageMode ( CENTER );
+    fill ( 0 );
+    stroke ( 0 );
+    ellipse ( 0, 0, r, r );
+    image ( img, 0, 0, r, r );
     popMatrix();
   }
 
 
   private void physX()
   {
-    x+=velX;
+    x += velX;
   }
 
   private void physY()
   {
-    y+=velY;
-    velY+=grav;
+    y += velY;
+    velY += grav;
   }
   
   private void turn()
@@ -104,7 +104,7 @@ public class Ball
     if ( target.within ( leftEdge() + r / 2 ) || 
          target.within ( rightEdge() - r / 2 ) )
     {
-      hasHit=true;
+      hasHit = true;
       return true;
     }
     return false;
@@ -128,15 +128,15 @@ public class Ball
   public int rightEdge()
   {return ( int ) ( x + r );}
 
-  protected void setX(float myX)
+  protected void setX( float myX )
   {x = myX;}
-  protected void setY(float myY)
+  protected void setY( float myY )
   {y = myY;}
-  protected void setVelX(float vX)
+  protected void setVelX( float vX )
   {velX = vX;}
-  protected void setVelY(float vY)
+  protected void setVelY( float vY )
   {velY = vY;}
-  protected void setGravity(float g)
+  protected void setGravity( float g )
   {grav = g;}
   public float getX()
   {return x;}

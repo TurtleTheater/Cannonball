@@ -1,7 +1,6 @@
 public class Player
 {
   private String name;
- // private int points;
   private Cannon cannon;
   private ArrayList<Ball> ammo;
   private int atmps;
@@ -9,14 +8,16 @@ public class Player
 
   public Player()
   {
-    // Do nothing
+    name = "Player";
+    cannon = new Cannon ( 50, height-1, 45 );
+    ammo = new ArrayList<Ball>();
   }
-  public Player(String myName)
+  public Player ( String myName )
   {
     name = myName;
-    ammo= new ArrayList<Ball>();
-    cannon= new Cannon( 50, height-1, 45 );
-    atmps=5;
+    atmps = 5;
+    cannon = new Cannon ( 50, height-1, 45 );
+    ammo = new ArrayList<Ball>();
   }
 
   public void fire_cannon()
@@ -27,17 +28,22 @@ public class Player
   public int score()
   {
     int points=0;
-    for(int i=0; i<ammo.size();i++)
+    for( int i = 0; i < ammo.size(); i++ )
     {
-      if(ammo.get(i).hasHit())
+      if ( ammo.get(i).hasHit() )
       {
         points+=10;
       }
       
     }
     return points;
-    
-    
+  }
+
+  public void printScore ( int t_x, int t_y )
+  {
+    textSize ( 12 );
+    fill ( 0 );
+    text ( name + ": " + score(), t_x, t_y );
   }
   
   public int getAttempts()
