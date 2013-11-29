@@ -14,6 +14,7 @@ void setup()
   size ( 1000, 600 );
   bg = loadImage( "Kirby background.png" );
   frameRate ( 100 );
+  c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
   tar = new Target();
   ammo= new ArrayList<Ball>();
