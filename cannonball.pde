@@ -7,6 +7,7 @@ int attempts = 5;
 String status;
 ArrayList<Player> player;
 Player curPlayer;
+HUD hud;
 int playerNum = 0;
 
 void setup()
@@ -22,11 +23,13 @@ void setup()
   player.add ( new Player ( "Player 1" ) );
   player.add ( new Player ( "Player 2" ) );
   curPlayer = player.get ( playerNum );
+  hud = new HUD();
 }
 
 void draw()
 {
   background ( bg );
+  hud.draw();
 
   curPlayer.cannon.draw();
   curPlayer.cannon.printInfo ( 170, 50 );
