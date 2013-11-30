@@ -51,7 +51,7 @@ void draw()
       status = "miss";
     }
 
-    if ( attempts == 0 )
+    if ( curPlayer.getAttempts() == 0 )
     {
       game_over ( 290, 300 );
     }
@@ -64,17 +64,17 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == CODED && keyCode == UP && attempts != 0 )
+  if ( key == CODED && keyCode == UP && curPlayer.getAttempts() != 0 )
     curPlayer.cannon.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN && attempts != 0 )
+  if ( key == CODED && keyCode == DOWN && curPlayer.getAttempts() != 0 )
     curPlayer.cannon.aim ( -1 );
   if ( key == 'r' )
     reset();
-  if ( key == ' ' && attempts != 0 && b.getY() >= height)
+  if ( key == ' ' && curPlayer.getAttempts() != 0 && b.getY() >= height)
   {
     b = curPlayer.cannon.fire ();
     curPlayer.ammo.add ( b );
-    attempts--;
+    
     status = "running";
 
     playerNum += 1;
@@ -110,7 +110,7 @@ void score ( int t_x, int t_y )
 {
   textSize ( 12 );
   fill ( 0 );
-  text ( "Number of Attempts: " + attempts, t_x, t_y );
+  text ( "Number of Attempts: " + curPlayer.getAttempts(), t_x, t_y );
 }
 
 void status ( int t_x, int t_y )

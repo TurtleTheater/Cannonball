@@ -2,7 +2,9 @@ public class Player
 {
   private String name;
   private Cannon cannon;
-  ArrayList<Ball> ammo;
+  private ArrayList<Ball> ammo;
+  private int atmps;
+  
 
   public Player()
   {
@@ -13,6 +15,7 @@ public class Player
   public Player ( String myName )
   {
     name = myName;
+    atmps = 5;
     cannon = new Cannon ( 50, height-1, 45 );
     ammo = new ArrayList<Ball>();
   }
@@ -41,6 +44,11 @@ public class Player
     textSize ( 12 );
     fill ( 0 );
     text ( name + ": " + score(), t_x, t_y );
+  }
+  
+  public int getAttempts()
+  {
+    return atmps-ammo.size();
   }
   
   
