@@ -43,13 +43,14 @@ public class Player
   {
     text ( name + ": " + score(), t_x, t_y );
   }
-  
-  public int getAttempts()
+
+  void printAttempts ( int t_x, int t_y )
   {
-    return atmps-ammo.size();
+    text ( name + ": " + getAttempts() + " attempts remain", t_x, t_y );
   }
   
-  
+  public int getAttempts()
+  {return atmps-ammo.size();}
   public String getName()
   {return name;}
   public Cannon getCannon()

@@ -38,7 +38,7 @@ public class HUD
       drawY += textSize + 10;
     }
 
-    text ( curPlayer.getName(), 150, y + 5 );
+    curPlayer.printAttempts ( 150, y + 5 );
     curPlayer.cannon.printInfo ( 150, y + 39 );
   }
 }
