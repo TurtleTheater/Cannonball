@@ -12,7 +12,7 @@ public class HUD
 
   HUD()
   {
-    height = ( textSize + 10 ) * player.size() + 10;
+    height = max ( ( textSize + 10 ) * player.size() + 10, 78 );
   }
   HUD ( int myX, int myY )
   {
