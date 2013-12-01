@@ -12,7 +12,7 @@ public class HUD
 
   HUD()
   {
-    height = ( textSize + 10 ) * player.size();
+    height = ( textSize + 10 ) * player.size() + 10;
   }
   HUD ( int myX, int myY )
   {
@@ -23,7 +23,22 @@ public class HUD
 
   void draw()
   {
+    int drawY = y + 5;
+
     fill ( bg );
     rect ( 0, 0, width, height );
+
+    textAlign ( LEFT, TOP );
+    textSize ( textSize );
+    fill ( 255 );
+
+    for ( Player p : player )
+    {
+      p.printScore ( x + 5, drawY );
+      drawY += textSize + 10;
+    }
+
+    text ( curPlayer.getName(), 150, y + 5 );
+    curPlayer.cannon.printInfo ( 150, y + 39 );
   }
 }

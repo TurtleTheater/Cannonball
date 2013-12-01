@@ -32,7 +32,6 @@ void draw()
   hud.draw();
 
   curPlayer.cannon.draw();
-  curPlayer.cannon.printInfo ( 170, 50 );
 
   for ( Player p : player )
   {
@@ -61,8 +60,6 @@ void draw()
     noLoop();
   }
   tar.draw();
-  score ( 170, 20 );
-  curPlayer.printScore ( 170, 35 );
 }
 
 void keyPressed()
@@ -111,15 +108,11 @@ Player winner()
 
 void score ( int t_x, int t_y )
 {
-  textSize ( 12 );
-  fill ( 0 );
   text ( "Number of Attempts: " + curPlayer.getAttempts(), t_x, t_y );
 }
 
 void status ( int t_x, int t_y )
 {
-  textSize ( 12 );
-  fill ( 0 );
   text ( "Status: " + status, t_x, t_y);
 }
 
