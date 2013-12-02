@@ -6,7 +6,8 @@ public class Cannon
   private int width = 50;
   private float angle = 45;
   private float v = 6.3;
-  private color c = color ( 255 );
+  private color c = color ( 255, 0, 0 );
+  private PImage img = loadImage ( "Cannon.png" );
 
   public Cannon()
   {
@@ -52,13 +53,15 @@ public class Cannon
 
   public void draw()
   {
-    rectMode(CORNER);
+    imageMode ( CORNER );
     pushMatrix();
     fill(0);
     stroke(0);
     translate(x,y);
     rotate(-1*radians(angle));
-    rect(0,0,length,-1*width);
+    tint ( c );
+    image ( img, 0, 0, length, -1 * width );
+    noTint();
     popMatrix();
   }
 
