@@ -118,8 +118,8 @@ void reset()
   {
     player.remove ( i );
   }
-  player.add ( new Player ( "Player 1" ) );
-  player.add ( new Player ( "Player 2" ) );
+  player.add ( new Player ( "Player 1", color ( 255, 0, 0 ) ) );
+  player.add ( new Player ( "Player 2", color ( 0, 0, 255 ) ) );
   tar = new Target();
   attempts = 5;
 

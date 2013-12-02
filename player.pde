@@ -3,8 +3,8 @@ public class Player
   private String name;
   private Cannon cannon;
   private ArrayList<Ball> ammo;
-  private int atmps;
-  
+  private int atmps = 5;
+  private color c = color ( 255, 0, 0 );
 
   public Player()
   {
@@ -15,8 +15,14 @@ public class Player
   public Player ( String myName )
   {
     name = myName;
-    atmps = 5;
-    cannon = new Cannon ( 50, height-1, 45 );
+    cannon = new Cannon ( 50, height-1, 45, c );
+    ammo = new ArrayList<Ball>();
+  }
+  public Player ( String myName, color myColor )
+  {
+    name = myName;
+    c = myColor;
+    cannon = new Cannon ( 50, height - 1, 45, c );
     ammo = new ArrayList<Ball>();
   }
 
