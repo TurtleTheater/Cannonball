@@ -6,6 +6,7 @@ public class Cannon
   private int width = 50;
   private float angle = 45;
   private float v = 6.3;
+  private color c = color ( 255 );
 
   public Cannon()
   {
@@ -24,6 +25,14 @@ public class Cannon
     x = myX;
     y = myY;
     angle = myAngle;
+  }
+
+  public Cannon ( float myX, float myY, float myAngle, color myColor )
+  {
+    x = myX;
+    y = myY;
+    angle = myAngle;
+    c = myColor;
   }
 
   public Ball fire()
