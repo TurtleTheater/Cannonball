@@ -25,6 +25,7 @@ public class HUD
   {
     int drawY = y + 5;
 
+    bg = color ( curPlayer.c, 150 );
     fill ( bg );
     rect ( 0, 0, width, height );
 
