@@ -68,8 +68,6 @@ public class Cannon
 
   void printInfo ( int t_x, int t_y )
   {
-    textSize ( 12 );
-    fill ( 0 );
     text ( "Cannon angle: " + nf ( angle, 2, 0 ) + " degrees", t_x, t_y );
   }
 
