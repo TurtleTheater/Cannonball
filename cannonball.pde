@@ -2,7 +2,6 @@ Ball b;
 Cannon c;
 Target tar;
 PImage bg;
-ArrayList<Ball> ammo;
 int attempts = 5;
 String status;
 ArrayList<Player> player;
@@ -17,13 +16,9 @@ void setup()
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
   b = new Ball( 10000, 10000 );
-  tar = new Target();
-  ammo= new ArrayList<Ball>();
   player = new ArrayList<Player>();
-  player.add ( new Player ( "Player 1" ) );
-  player.add ( new Player ( "Player 2" ) );
-  curPlayer = player.get ( playerNum );
   hud = new HUD();
+  reset();
 }
 
 void draw()
@@ -118,8 +113,15 @@ void status ( int t_x, int t_y )
 
 void reset()
 {
-  curPlayer.cannon = new Cannon ( 50, height-1, 45 );
-  curPlayer.ammo= new ArrayList<Ball>();
+  int i;
+  for ( i = player.size() - 1; i >= 0; --i )
+  {
+    player.remove ( i );
+  }
+  player.add ( new Player ( "Player 1" ) );
+  player.add ( new Player ( "Player 2" ) );
   tar = new Target();
   attempts = 5;
+
+  curPlayer = player.get ( playerNum );
 }
