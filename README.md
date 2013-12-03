@@ -7,13 +7,15 @@ Use the up and down keys to aim the cannon up and down.
 
 Use the space bar to fire.
 
+Press the 'r' button to reset the game.
+
 Team 2, Section 007
 -------------------
 Eric Dilmore \<erd130030\> (@geppettodivacin)
 
 Matthew Cunningham \<mac130130\> (@matthewcunningham)
 
-Kevin Hwang \<exh131330\> (@1turtles) *did not contribute for the last two weeks*
+Kevin Hwang \<exh131330\> (@1turtles) *has contributed a minimal amount to the project*
 
 Jack Murray \<jam130530\> (@halfoff)
 
