@@ -9,6 +9,7 @@ public class Ball
   private float grav = 0.05; // Gravity
   private int r = 40; // Radius
   private boolean hasHit= false;
+  private color c = color ( 255, 0, 0 );
   PImage img = loadImage("NicholasCage.png");
 
   Ball()
@@ -39,6 +40,17 @@ public class Ball
     velY = -1 * v * sin ( radians ( angle ) );
   }
 
+  Ball ( float myX, float myY, float angle, float v, color myColor )
+  {
+    x = myX;
+    y = myY;
+    
+    velX = v * cos ( radians ( angle ) );
+    velY = -1 * v * sin ( radians ( angle ) );
+
+    c = myColor;
+  }
+
   Ball ( Ball myBall )
   {
     x = myBall.x;
@@ -49,6 +61,7 @@ public class Ball
     velR = myBall.velR;
     grav = myBall.grav;
     r = myBall.r;
+    c = myBall.c;
   }
 
   private void draw()
@@ -61,6 +74,8 @@ public class Ball
     stroke ( 0 );
     ellipse ( 0, 0, r, r );
     image ( img, 0, 0, r, r );
+    fill ( c, 50 );
+    ellipse ( 0, 0, r, r );
     popMatrix();
   }
 

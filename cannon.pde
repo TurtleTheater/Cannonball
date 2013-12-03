@@ -47,7 +47,7 @@ public class Cannon
       + 0.5 * width * cos ( -1 * radians ( angle + 90 ) );
     ballY = y + length * sin ( -1 * radians ( angle ) )
       + 0.5 * width * sin ( -1 * radians ( angle + 90 ) );
-    Ball b = new Ball(ballX, ballY, angle, v);
+    Ball b = new Ball(ballX, ballY, angle, v, c);
     return b;
   }
 
