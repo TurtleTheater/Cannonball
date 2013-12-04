@@ -3,7 +3,7 @@ boolean game_running = false;
 color[] player_color = {
   color ( 255, 0, 0 ),
   color ( 0, 0, 255 ),
-  color ( 20, 110, 12 ),
+  color ( 45 ),
   color ( 166, 35, 173 ) };
 
 Ball b;
