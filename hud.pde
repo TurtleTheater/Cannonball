@@ -5,7 +5,7 @@ public class HUD
 
   int textSize = 24;
   int height;
-  int width = 500;
+  int width = 550;
 
   color bg = color ( 100, 0, 0, 150 );
   color fg = color ( 255 );
@@ -40,7 +40,7 @@ public class HUD
       drawY += textSize + 10;
     }
 
-    curPlayer.printAttempts ( 150, y + 5 );
-    curPlayer.cannon.printInfo ( 150, y + 39 );
+    curPlayer.printAttempts ( 200, y + 5 );
+    curPlayer.cannon.printInfo ( 200, y + 39 );
   }
 }
