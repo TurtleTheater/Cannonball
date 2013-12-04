@@ -3,9 +3,13 @@ Cannonball
 
 Firing a cannonball from a cannon, made fun!
 
-Use the up and down keys to aim the cannon up and down.
+Each player has 5 attempts to hit targets. The player with the most points wins. I like to call this Anti-Golf.
 
-Use the space bar to fire.
+Use the up and down keys to aim thine cannon up and down.
+
+Use the up and down keys to change the number of players then the Enter key to confirm your selection.
+
+Use the space bar to launch your projectile. 
 
 Press the 'r' button to reset the game.
 
@@ -24,3 +28,26 @@ David Smith \<dhs130030\> (@CallMePickle)
 For More Information
 --------------------
 Go to https://github.com/TurtleTheater/Cannonball for live updates of the code.
+
+
+
+
+               ,,))))))));,
+            __)))))))))))))),
+ \|/       -\(((((''''((((((((.
+ -*-==//////((''  .     `)))))),
+ /|\      ))| o    ;-.    '(((((                                  ,(,
+          ( `|    /  )    ;))))'                               ,_))^;(~
+             |   |   |   ,))((((_     _____------~~~-.        %,;(;(>';'~
+             o_);   ;    )))(((` ~---~  `::           \      %%~)~)(v;(`('~
+                   ;    ''''````         `:       `:::|\,__,%%  (~  );`'; ~
+                  |   _                )     /      `:|`----'     `-'
+            ______/\/~    |                 /        /
+          /~;;.____/;;'  /          ___--,-(   `;;;/
+         / //  _;______;'------~~~~~    /;;/\    /
+        //  | |                        / ;   \;;,\
+       (<_  | ;                      /',/-----'  _>
+        \_| ||_                     //~;~~~~~~~~~
+            `\_|                   (,~~  
+                                    \~\
+                                     ~~
