@@ -1,3 +1,11 @@
+boolean game_running = true;
+
+color[] player_color = {
+  color ( 255, 0, 0 ),
+  color ( 0, 0, 255 ),
+  color ( 20, 110, 12 ),
+  color ( 166, 35, 173 ) };
+
 Ball b;
 Cannon c;
 Target tar;
@@ -24,37 +32,45 @@ void setup()
 void draw()
 {
   background ( bg );
-  hud.draw();
 
-  curPlayer.cannon.draw();
-
-  for ( Player p : player )
+  if ( !game_running )
   {
-    for ( int i = 0; i < p.ammo.size(); i++ )
-    {
-      p.ammo.get(i).update();
-    }
+    menu();
   }
-  
-  if ( b.getY() >= height )
+  else // if ( game_running )
   {
-    if ( b.hit ( tar ) )
-    {
-      status = "hit";
-      tar.rand_pos();
-    }
-    else if ( status != "hit" )
-    {
-      status = "miss";
-    }
+    hud.draw();
 
-    if ( curPlayer.getAttempts() == 0 )
+    curPlayer.cannon.draw();
+
+    for ( Player p : player )
     {
-      game_over ( 290, 300 );
+      for ( int i = 0; i < p.ammo.size(); i++ )
+      {
+        p.ammo.get(i).update();
+      }
     }
-    noLoop();
+    
+    if ( b.getY() >= height )
+    {
+      if ( b.hit ( tar ) )
+      {
+        status = "hit";
+        tar.rand_pos();
+      }
+      else if ( status != "hit" )
+      {
+        status = "miss";
+      }
+
+      if ( curPlayer.getAttempts() == 0 )
+      {
+        game_over ( 290, 300 );
+      }
+      noLoop();
+    }
+    tar.draw();
   }
-  tar.draw();
 }
 
 void keyPressed()
@@ -77,6 +93,22 @@ void keyPressed()
     curPlayer = player.get ( playerNum );
   }
   loop();
+}
+
+void menu()
+{
+  int num_players = 1;
+
+  textAlign ( LEFT );
+  fill ( 0, 255, 0 );
+  rect ( 230, 315, 500, -60 );
+
+  fill ( 166, 35, 173 );
+  textSize ( 40 );
+  text ( "How many players? [   ]", 240, 300 );
+
+  fill ( 0 );
+  text ( "" + num_players, 643, 300 );
 }
 
 void game_over ( int t_x, int t_y )
@@ -120,6 +152,32 @@ void reset()
   }
   player.add ( new Player ( "Player 1", color ( 255, 0, 0 ) ) );
   player.add ( new Player ( "Player 2", color ( 0, 0, 255 ) ) );
+  tar = new Target();
+  attempts = 5;
+
+  curPlayer = player.get ( playerNum );
+}
+
+void reset ( int num_players )
+{
+  int i;
+
+  if ( num_players > 4 || num_players < 1 )
+  {
+    println ( "You can't have that many players." );
+    exit();
+  }
+
+  for ( i = player.size() - 1; i >= 0; --i )
+  {
+    player.remove ( i );
+  }
+
+  for ( i = 0; i < num_players; ++i )
+  {
+    player.add ( new Player ( "Player " + ( i + 1 ), player_color[ i ] ) );
+  }
+
   tar = new Target();
   attempts = 5;
 
