@@ -23,7 +23,6 @@ void setup()
   bg = loadImage( "Kirby background.png" );
   frameRate ( 100 );
   c = new Cannon( 50, height-1, 45 );
-  b = new Ball( 10000, 10000 );
   player = new ArrayList<Player>();
   hud = new HUD();
 }
@@ -106,7 +105,7 @@ void keyPressed()
     if ( key == CODED && keyCode == DOWN && curPlayer.getAttempts() != 0 )
       curPlayer.cannon.aim ( -1 );
     if ( key == 'r' )
-      reset ( player.size() );
+      return_to_menu();
     if ( key == ' ' && curPlayer.getAttempts() != 0 && b.getY() >= height)
     {
       b = curPlayer.cannon.fire ();
@@ -122,11 +121,18 @@ void keyPressed()
   }
 }
 
+void return_to_menu()
+{
+  playerNum = 1;
+  game_running = false;
+}
+
 void menu()
 {
+  rectMode ( CORNER );
   textAlign ( LEFT );
   fill ( 0, 255, 0 );
-  rect ( 230, 315, 500, -60 );
+  rect ( 230, 255, 500, 60 );
 
   fill ( 166, 35, 173 );
   textSize ( 40 );
@@ -206,6 +212,8 @@ void reset ( int num_players )
 
   tar = new Target();
   attempts = 5;
+
+  b = new Ball( 10000, 10000 );
 
   playerNum = 0;
   curPlayer = player.get ( playerNum );
