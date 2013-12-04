@@ -129,17 +129,22 @@ void menu()
   fill ( 0, 255, 0 );
   rect ( 230, 255, 500, 60 );
 
-  fill ( 166, 35, 173 );
+  fill ( 0 );
   textSize ( 40 );
   text ( "How many players? [   ]", 240, 300 );
 
-  fill ( 0 );
+  fill ( 166, 35, 173 );
   text ( "" + playerNum, 643, 300 );
 }
 
 void game_over ( int t_x, int t_y )
 {
   Player winner = winner();
+  
+  rectMode ( CORNER );
+  fill ( 0, 255, 0 );
+  rect ( t_x - 180, t_y - 15, 800, 200 );
+
   textSize ( 72 );
   fill ( 0 );
   text ( winner.getName() + " wins!", t_x, t_y );
