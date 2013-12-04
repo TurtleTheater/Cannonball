@@ -38,8 +38,6 @@ void draw()
   }
   else // if ( game_running )
   {
-    hud.draw();
-
     curPlayer.cannon.draw();
 
     for ( Player p : player )
@@ -52,14 +50,10 @@ void draw()
     
     if ( b.getY() >= height )
     {
-      if ( b.hit ( tar ) )
+      while ( b.hit ( tar ) )
       {
         status = "hit";
         tar.rand_pos();
-      }
-      else if ( status != "hit" )
-      {
-        status = "miss";
       }
 
       if ( curPlayer.getAttempts() == 0 )
@@ -68,6 +62,7 @@ void draw()
       }
       noLoop();
     }
+    hud.draw();
     tar.draw();
   }
 }
