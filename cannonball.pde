@@ -1,4 +1,4 @@
-boolean game_running = true;
+boolean game_running = false;
 
 color[] player_color = {
   color ( 255, 0, 0 ),
@@ -15,7 +15,7 @@ String status;
 ArrayList<Player> player;
 Player curPlayer;
 HUD hud;
-int playerNum = 0;
+int playerNum = 1;
 
 void setup()
 {
@@ -26,7 +26,6 @@ void setup()
   b = new Ball( 10000, 10000 );
   player = new ArrayList<Player>();
   hud = new HUD();
-  reset();
 }
 
 void draw()
@@ -35,6 +34,7 @@ void draw()
 
   if ( !game_running )
   {
+    noLoop();
     menu();
   }
   else // if ( game_running )
@@ -75,30 +75,55 @@ void draw()
 
 void keyPressed()
 {
-  if ( key == CODED && keyCode == UP && curPlayer.getAttempts() != 0 )
-    curPlayer.cannon.aim ( 1 );
-  if ( key == CODED && keyCode == DOWN && curPlayer.getAttempts() != 0 )
-    curPlayer.cannon.aim ( -1 );
-  if ( key == 'r' )
-    reset();
-  if ( key == ' ' && curPlayer.getAttempts() != 0 && b.getY() >= height)
+  if ( !game_running )
   {
-    b = curPlayer.cannon.fire ();
-    curPlayer.ammo.add ( b );
-    
-    status = "running";
-
-    playerNum += 1;
-    playerNum %= player.size();
-    curPlayer = player.get ( playerNum );
+    if ( key == CODED && keyCode == UP )
+    {
+      if ( playerNum + 1 <= 4 )
+      {
+        ++playerNum;
+        redraw();
+      }
+    }
+    else if ( key == CODED && keyCode == DOWN )
+    {
+      if ( playerNum - 1 > 0 )
+      {
+        --playerNum;
+        redraw();
+      }
+    } else if ( keyCode == ENTER || keyCode == RETURN )
+    {
+      game_running = true;
+      reset ( playerNum );
+      loop();
+    }
   }
-  loop();
+  else
+  {
+    if ( key == CODED && keyCode == UP && curPlayer.getAttempts() != 0 )
+      curPlayer.cannon.aim ( 1 );
+    if ( key == CODED && keyCode == DOWN && curPlayer.getAttempts() != 0 )
+      curPlayer.cannon.aim ( -1 );
+    if ( key == 'r' )
+      reset ( player.size() );
+    if ( key == ' ' && curPlayer.getAttempts() != 0 && b.getY() >= height)
+    {
+      b = curPlayer.cannon.fire ();
+      curPlayer.ammo.add ( b );
+      
+      status = "running";
+
+      playerNum += 1;
+      playerNum %= player.size();
+      curPlayer = player.get ( playerNum );
+    }
+    loop();
+  }
 }
 
 void menu()
 {
-  int num_players = 1;
-
   textAlign ( LEFT );
   fill ( 0, 255, 0 );
   rect ( 230, 315, 500, -60 );
@@ -108,7 +133,7 @@ void menu()
   text ( "How many players? [   ]", 240, 300 );
 
   fill ( 0 );
-  text ( "" + num_players, 643, 300 );
+  text ( "" + playerNum, 643, 300 );
 }
 
 void game_over ( int t_x, int t_y )
@@ -155,6 +180,7 @@ void reset()
   tar = new Target();
   attempts = 5;
 
+  playerNum = 0;
   curPlayer = player.get ( playerNum );
 }
 
@@ -181,5 +207,6 @@ void reset ( int num_players )
   tar = new Target();
   attempts = 5;
 
+  playerNum = 0;
   curPlayer = player.get ( playerNum );
 }

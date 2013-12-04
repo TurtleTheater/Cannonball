@@ -16,13 +16,14 @@ public class HUD
   }
   HUD ( int myX, int myY )
   {
-    height = ( textSize + 10 ) * player.size();
+    height = max ( ( textSize + 10 ) * player.size() + 10, 78 );
     x = myX;
     y = myY;
   }
 
   void draw()
   {
+    height = max ( ( textSize + 10 ) * player.size() + 10, 78 );
     int drawY = y + 5;
 
     bg = color ( curPlayer.c, 150 );
