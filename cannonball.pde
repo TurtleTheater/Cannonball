@@ -139,7 +139,7 @@ void menu()
 
 void game_over ( int t_x, int t_y )
 {
-  Player winner = winner();
+  ArrayList<Player> winner = winner();
   
   rectMode ( CORNER );
   fill ( 0, 255, 0 );
@@ -147,21 +147,42 @@ void game_over ( int t_x, int t_y )
 
   textSize ( 72 );
   fill ( 0 );
-  text ( winner.getName() + " wins!", t_x, t_y );
-  text ( "You scored " + winner.score() + " points.", t_x - 150, t_y + 65 );
+  if ( winner.size() == 1 )
+  {
+    text ( winner.get ( 0 ).getName() + " wins!", t_x, t_y );
+    text ( "You scored " + winner.get ( 0 ).score() + " points.", t_x - 150, t_y + 65 );
+  } else
+  {
+    text ( "There is a draw!", t_x, t_y );
+  }
 }
 
-Player winner()
+ArrayList<Player> winner()
 {
-  Player winner = player.get ( 0 );
+  ArrayList<Player> winners = new ArrayList<Player>();
+  int win_score = win_score();
+
   for ( Player p : player )
   {
-    if ( p.score() > winner.score() )
+    if ( p.score() == win_score )
     {
-      winner = p;
+      winners.add ( p );
     }
   }
-  return winner;
+  return winners;
+}
+
+int win_score()
+{
+  int win_score = 0;
+  for ( Player p : player )
+  {
+    if ( p.score() > win_score )
+    {
+      win_score = p.score();
+    }
+  }
+  return win_score;
 }
 
 void score ( int t_x, int t_y )
